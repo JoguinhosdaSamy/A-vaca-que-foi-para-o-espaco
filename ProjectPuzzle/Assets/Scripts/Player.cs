@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
        public WayPoints target;
     
-    void Update()
+    /*void Update()
     {
         if(Input.touchCount > 0)
         {
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
                 transform.position += (Vector3)t.deltaPosition/600;
             }
         }
-    }
+    }*/
     void FixedUpdate()
     {
         Vector3 dir = target.transform.position - transform.position;
