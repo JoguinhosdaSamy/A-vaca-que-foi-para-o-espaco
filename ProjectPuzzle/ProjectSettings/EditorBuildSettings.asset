@@ -26,4 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fase Final.unity
     guid: 3f028bf49e2d79546bfe0ecec6daca8d
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: adc2fc2d4cdd2524a91a9201d2d848a8, type: 2}

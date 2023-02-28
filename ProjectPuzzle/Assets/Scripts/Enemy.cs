@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Vector3 playerPosition;
+    public Vector3 targetPosition;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        float speed = 5.0f; // velocidade da IA
+        Vector3 direction = (playerPosition - targetPosition).normalized;
+        Vector3 newPosition = transform.position + direction * speed * Time.deltaTime;
+        transform.position = newPosition;
     }
 }
