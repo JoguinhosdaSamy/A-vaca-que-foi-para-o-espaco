@@ -27,5 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Fase Final.unity
     guid: 3f028bf49e2d79546bfe0ecec6daca8d
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3e0c8573c39c4554c888fb418f303c45,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: ff14f22be01222043b93288e5fd1a603, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: adc2fc2d4cdd2524a91a9201d2d848a8, type: 2}

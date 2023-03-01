@@ -55,7 +55,7 @@
     "m_SymbolPaths": [
         {
             "Name": "C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.11f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\Variations\\mono\\Development\\Symbols",
-            "Enabled": true
+            "Enabled": false
         }
     ],
     "m_CaptureVideoSettings": {
