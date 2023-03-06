@@ -57,4 +57,6 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-
+/ProjectPuzzle/UserSettings
+/ProjectPuzzle/Packages
+/ProjectPuzzle/ProjectSettings
