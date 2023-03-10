@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-       public WayPoints target;
-    
-    // void Update()
-    // {
-    //     if(Input.touchCount > 0)
-    //     {
-    //         Touch t = Input.GetTouch(0);
-    //         
-    //         Vector3 pos = GetComponent<Camera>().ScreenToWorldPoint(t.position);
-    //         pos.z = 0;
-    //         transform.position = pos;
-    //     }
-    // }
-    
+    public Transform target;
+    public static Player player;
+    private bool _istargetNull;
+
+    void Start()
+    {
+        _istargetNull = target == null;
+        player = this;
+    }
+
     void FixedUpdate()
     {
-        Vector3 dir = target.transform.position - transform.position;
-         if(dir.magnitude < 0.1f)
-            {
-                target = target.points[0];
-            }   
-        transform.position = transform.position + dir.normalized * Time.fixedDeltaTime * 6.0f;
-    }
-}
+        if (_istargetNull) return;
 
+        Vector3 dir = target.position - transform.position;
+        if (dir.magnitude > 0.1){
+            transform.Translate(dir.normalized * (3.0f * Time.deltaTime), Space.World);
+        }
+    }
+
+}
