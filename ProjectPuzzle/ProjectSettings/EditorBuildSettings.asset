@@ -11,21 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fase teste.unity
     guid: c850ee8c3b14cc8459e7e186857cf567
-  - enabled: 0
-    path: Assets/Scenes/Fase 1.unity
-    guid: aa5b196a2c5a41b4199f6a3d6299f901
-  - enabled: 0
-    path: Assets/Scenes/Fase 2.unity
-    guid: 80220e0863880dc45b9893c123f3daa9
-  - enabled: 0
-    path: Assets/Scenes/Fase 3.unity
-    guid: f8dfa305e96496a4a885da8cef21fde5
-  - enabled: 0
-    path: Assets/Scenes/Fase 4.unity
-    guid: b75ba1ec6ec9518448bb8068e5ef4cb4
-  - enabled: 0
-    path: Assets/Scenes/Fase Final.unity
-    guid: 3f028bf49e2d79546bfe0ecec6daca8d
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3e0c8573c39c4554c888fb418f303c45,
       type: 2}
