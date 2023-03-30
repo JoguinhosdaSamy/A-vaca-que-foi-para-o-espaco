@@ -11,6 +11,7 @@ public class Point : MonoBehaviour
     private readonly Color _redLine = Color.red;
     private readonly Color _yellowLine = Color.yellow;
     private GameController controller;
+    public bool endPoint;
     
     void Start()
     {

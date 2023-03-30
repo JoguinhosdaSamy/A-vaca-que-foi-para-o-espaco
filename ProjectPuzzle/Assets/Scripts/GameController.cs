@@ -24,4 +24,8 @@ public class GameController : MonoBehaviour
         }
         MovementStatus = tipo;
     }
+    public void Victory()
+    {
+        Debug.Log("");
+    }
 }

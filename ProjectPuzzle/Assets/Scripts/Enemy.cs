@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -51,23 +52,27 @@ public class Enemy : MonoBehaviour
     
     void FixedUpdate()
     {
-        if(controller.MovementStatus == GameController.Movement.Alien){
-        if (_istargetNull)
-        {
-            return;
-        }
-        
+        if (controller.MovementStatus != GameController.Movement.Alien) return;
+            
+        if (_istargetNull) return;
+
         Vector3 dir = directionGo.position - transform.position;
         if (dir.magnitude > 0.1)
         {
             transform.Translate(dir.normalized * (3.0f * Time.deltaTime), Space.World);
-        }
-        else
-        {
+        } else {
             _istargetNull = true;
             controller.SetMovementStatus(GameController.Movement.Vaca);
         }
+
     }
-        
+    
+    void CheckDie()
+    {
+        if (pointActual == target.target)
+        {
+            var scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
     }
 }
