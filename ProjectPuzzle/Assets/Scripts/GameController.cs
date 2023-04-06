@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour
     [HideInInspector] public Enemy Enemy;
     
     
-    // Start is called before the first frame update
     void Start()
     {
         Enemy = GameObject.Find("Enemy").GetComponent<Enemy>();

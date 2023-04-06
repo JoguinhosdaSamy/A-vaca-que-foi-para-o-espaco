@@ -41,9 +41,15 @@ public class Player : MonoBehaviour
          }
     void CheckVictory()
     {
-        if (target.tag == "Finish" && Vector3.Distance(target.transform.position, GameObject.Find("way08").transform.position) < 1.0f)
+        GameObject finishObject = GameObject.FindGameObjectWithTag("Finish");
+
+        if (finishObject != null)
         {
-            SceneManager.LoadScene("Menu");
+            float distanceToFinish = Vector3.Distance(transform.position, finishObject.transform.position);
+            if (distanceToFinish < 0.1f)
+            {
+                SceneManager.LoadScene("Menu");
+            }
         }
     }
 
