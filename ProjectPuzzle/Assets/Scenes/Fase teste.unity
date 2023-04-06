@@ -12760,6 +12760,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: estrela (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ffbc0904356478da1d91963444b656, type: 3}
 --- !u!4 &1255731973 stripped
@@ -13048,6 +13053,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: estrela (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ffbc0904356478da1d91963444b656, type: 3}
 --- !u!4 &1684166847 stripped
@@ -13170,7 +13180,7 @@ GameObject:
   - component: {fileID: 1937477264}
   m_Layer: 0
   m_Name: way08
-  m_TagString: WayPoint
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

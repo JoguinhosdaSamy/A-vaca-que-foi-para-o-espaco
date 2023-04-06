@@ -41,14 +41,13 @@ public class Player : MonoBehaviour
          }
     void CheckVictory()
     {
-        if (target.endPoint)
+        if (target.tag == "Finish" && Vector3.Distance(target.transform.position, GameObject.Find("way08").transform.position) < 1.0f)
         {
-            var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
-
+            SceneManager.LoadScene("Menu");
         }
     }
-    
+
+
     void CheckDie()
     {
         if (target == enemy.pointActual)
