@@ -4,6 +4,7 @@ using UnityEngine;
 public class Point : MonoBehaviour
 {
     public enum Tipo {Neutro, Alien, Vaca};
+    public enum Prop {None, EndPoint, SleepPower};
     public Point[] points;
     public Tipo[] tipo;
     private List<GameObject> lines = new List<GameObject>();
@@ -11,7 +12,7 @@ public class Point : MonoBehaviour
     private readonly Color _redLine = Color.red;
     private readonly Color _yellowLine = Color.yellow;
     private GameController controller;
-    public bool endPoint;
+    public Prop Property;
     
     void Start()
     {

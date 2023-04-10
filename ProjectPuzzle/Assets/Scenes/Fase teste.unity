@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -551,7 +551,7 @@ MonoBehaviour:
   tipo: 02000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  endPoint: 0
+  Property: 0
 --- !u!108 &456119583
 Light:
   m_ObjectHideFlags: 0
@@ -669,7 +669,7 @@ MonoBehaviour:
   tipo: 0100000001000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  endPoint: 0
+  Property: 0
 --- !u!135 &482814522
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6076,7 +6076,7 @@ MonoBehaviour:
   tipo: 0100000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  endPoint: 0
+  Property: 0
 --- !u!108 &686392441
 Light:
   m_ObjectHideFlags: 0
@@ -6746,6 +6746,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementStatus: 0
   Enemy: {fileID: 0}
+  NextScene: Assets/Scenes/Menu.unity
+  SleepPowerUp: 3
 --- !u!1001 &1008709743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6993,7 +6995,7 @@ MonoBehaviour:
   tipo: 01000000010000000200000002000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  endPoint: 0
+  Property: 0
 --- !u!135 &1061488199
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7238,7 +7240,7 @@ MonoBehaviour:
   tipo: 020000000000000001000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  endPoint: 0
+  Property: 0
 --- !u!108 &1176566307
 Light:
   m_ObjectHideFlags: 0
@@ -7357,7 +7359,7 @@ MonoBehaviour:
   tipo: 020000000000000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  endPoint: 0
+  Property: 0
 --- !u!135 &1203570683
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7520,6 +7522,7 @@ MonoBehaviour:
   pointActual: {fileID: 1937477260}
   directionGo: {fileID: 0}
   _istargetNull: 0
+  counter: 1
 --- !u!136 &1211573473
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12595,7 +12598,7 @@ MonoBehaviour:
   tipo: 0000000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  endPoint: 0
+  Property: 0
 --- !u!108 &1253899036
 Light:
   m_ObjectHideFlags: 0
@@ -13304,7 +13307,7 @@ MonoBehaviour:
   tipo: 00000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  endPoint: 0
+  Property: 1
 --- !u!135 &1937477261
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,46 +21,44 @@ public class Player : MonoBehaviour
     }
 
     void FixedUpdate()
+     {
+         if (target == enemy.pointActual)
          {
-     
-                 if (_istargetNull) return;
-     
-                 Vector3 dir = target.transform.position - transform.position;
-                 if (dir.magnitude > 0.1)
-                 {
-                    transform.Translate(dir.normalized * (3.0f * Time.deltaTime), Space.World);
-                    Vector3 rot = dir.normalized;
-                    rot.y = transform.position.y;
-                    transform.rotation = Quaternion.LookRotation(dir.normalized);
-                 } else {
-                     _istargetNull = true;
-                     controller.SetMovementStatus(GameController.Movement.Alien);
-                     CheckDie();
-                     CheckVictory();
-                 }
+             if(controller.MovementStatus == GameController.Movement.Vaca){
+                 controller.GameOver();
+             }
+        
          }
-    void CheckVictory()
+         
+         if (_istargetNull) return;
+
+         Vector3 dir = target.transform.position - transform.position;
+         if (dir.magnitude > 0.1)
+         {
+            transform.Translate(dir.normalized * (3.0f * Time.deltaTime), Space.World);
+            Vector3 rot = dir.normalized;
+            rot.y = transform.position.y;
+            transform.rotation = Quaternion.LookRotation(dir.normalized);
+         } else {
+             _istargetNull = true;
+             controller.SetMovementStatus(GameController.Movement.Alien);
+             CheckCondition();
+         }
+     }
+    private void CheckCondition()
     {
-        GameObject finishObject = GameObject.FindGameObjectWithTag("Finish");
+       
+        var targetTag = target.Property;
 
-        if (finishObject != null)
+        switch (targetTag)
         {
-            float distanceToFinish = Vector3.Distance(transform.position, finishObject.transform.position);
-            if (distanceToFinish < 0.1f)
-            {
-                SceneManager.LoadScene("Menu");
-            }
+            case Point.Prop.EndPoint:
+                controller.Victory();
+                break;
+            case Point.Prop.SleepPower:
+                controller.PowerSleep();
+                break;
         }
+        
     }
-
-
-    void CheckDie()
-    {
-        if (target == enemy.pointActual)
-        {
-            var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
-        }
-    }
-
 }
