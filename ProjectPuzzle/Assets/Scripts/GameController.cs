@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public enum Movement {Moving, Alien, Vaca};
-    [HideInInspector] public Movement MovementStatus ;
-    [HideInInspector] public Enemy Enemy;
+    [SerializeField] public Movement MovementStatus ;
+    public Enemy Enemy;
     [SerializeField] public string NextScene;
     [SerializeField] public int SleepPowerUp;
 
@@ -47,12 +47,13 @@ public class GameController : MonoBehaviour
 public class GameControllerEditor : Editor
 {
     SerializedProperty powerSleep;
+    SerializedProperty movementStatus;
     
     void OnEnable()
     {
         // Setup the SerializedProperties.
         powerSleep = serializedObject.FindProperty ("SleepPowerUp");
-
+        movementStatus = serializedObject.FindProperty ("MovementStatus");
     }
     public override void OnInspectorGUI()
     {
@@ -72,6 +73,10 @@ public class GameControllerEditor : Editor
             var scenePathProperty = serializedObject.FindProperty("NextScene");
             scenePathProperty.stringValue = newPath;
         }
+        
+        EditorGUI.BeginDisabledGroup(true);
+        EditorGUILayout.EnumPopup("Status do movimento", (GameController.Movement)movementStatus.intValue);
+        EditorGUI.EndDisabledGroup();
         serializedObject.ApplyModifiedProperties();
     }
 }

@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
      {
-         if (target == enemy.pointActual)
+         if (target == enemy.currentPoint)
          {
              if(controller.MovementStatus == GameController.Movement.Vaca){
                  controller.GameOver();

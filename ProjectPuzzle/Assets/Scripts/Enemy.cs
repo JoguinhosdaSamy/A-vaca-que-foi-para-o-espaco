@@ -1,66 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
     private GameController controller;
-    public Point pointActual;
     private Player target;
-    public Transform directionGo;
-    [HideInInspector]
-    public bool _istargetNull;
+    public Point currentPoint;
+    public Transform nextPoint;
+    private bool isTargetNull;
     public int counter;
-    
-    void Start()
+
+    private void Start()
     {
         controller = GameObject.Find("GameController").GetComponent<GameController>();
         target = GameObject.Find("Player").GetComponent<Player>();
-        _istargetNull = target == null;
-        directionGo = pointActual.transform;
+        isTargetNull = target == null;
+        nextPoint = currentPoint.transform;
     }
-    
-    public void FindShortestPath()
-    {
-        if(counter == 0){
-            if (target.target == pointActual)
-            {
-                controller.SetMovementStatus(GameController.Movement.Vaca);
-                return;
-            }
-            Point[] listaPoints = pointActual.points;
-            Point.Tipo[] listaTarget = pointActual.tipo;
-            float minDistance = float.MaxValue;
-            for (var i = 0; i < listaPoints.Length; i++)
-            {
-                if (listaTarget[i] == Point.Tipo.Vaca)
-                {
-                    continue;
-                }
-                Vector3 newPosition = this.transform.position + new Vector3(listaPoints[i].transform.position.x,0.0f, listaPoints[i].transform.position.z);
-                float distance = (this.target.transform.position - newPosition).magnitude;
 
-                if (distance < minDistance)
-                {
-                    directionGo = listaPoints[i].transform;
-                    minDistance = distance;
-                    pointActual = listaPoints[i];
-               
-                }
-            }
-            
-            _istargetNull = false;
-        }
-    }
-    
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (controller.MovementStatus != GameController.Movement.Alien) return;
-            
-        if (_istargetNull) return;
-
+        if (isTargetNull) return;
         if (counter != 0)
         {
             counter--;
@@ -68,46 +33,92 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        Vector3 dir = directionGo.position - transform.position;
-        if (dir.magnitude > 0.1)
+        Vector3 dir = nextPoint.position - transform.position;
+        if (dir.magnitude > 0.1f)
         {
             transform.Translate(dir.normalized * (3.0f * Time.deltaTime), Space.World);
-        } else {
-            _istargetNull = true;
+        }
+        else
+        {
+            isTargetNull = true;
             controller.SetMovementStatus(GameController.Movement.Vaca);
         }
-
     }
-    
-    void CheckDie()
+
+    private void CheckDie()
     {
-        if (pointActual == target.target)
+        if (currentPoint == target.target)
         {
-            var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
+            controller.GameOver();
         }
     }
-}
 
-[CustomEditor(typeof(Enemy), true)]
-public class EnemyEditor : Editor
-{
-    SerializedProperty counterProp;
-    SerializedProperty pointProp;
-    
-    void OnEnable()
+    public void FindShortestPath()
     {
-        // Setup the SerializedProperties.
-        counterProp = serializedObject.FindProperty ("counter");
-        pointProp = serializedObject.FindProperty ("pointActual");
+        if (counter == 0)
+        {
+            if (target.target == currentPoint)
+            {
+                controller.SetMovementStatus(GameController.Movement.Vaca);
+                return;
+            }
 
-    }
-    public override void OnInspectorGUI()
-    {
+            // Initialize the priority queue
+            var pq = new PriorityQueue<Point>();
+            pq.Enqueue(currentPoint, 0);
 
-        EditorGUILayout.IntSlider (counterProp, 0, 5, new GUIContent ("Counter do enemy"));
-        EditorGUILayout.PropertyField (pointProp, new GUIContent ("Ponto Inicial"));
-        
-        serializedObject.ApplyModifiedProperties();
+            // Initialize the distances
+            var distances = new Dictionary<Point, float>();
+            distances[currentPoint] = 0;
+
+            while (pq.Count > 0)
+            {
+                // Get the next point to visit
+                var current = pq.Dequeue();
+
+                // Check if we've reached the target
+                if (current == target.target)
+                {
+                    // Reconstruct the path and set the nextPoint
+                    var path = new List<Point>();
+                    while (current != currentPoint)
+                    {
+                        path.Add(current);
+                        current = current.prev; // atualiza o "prev" para o próximo ponto no caminho
+                    }
+
+                    path.Reverse();
+                    nextPoint = path[0].transform;
+                    currentPoint = path[0];
+                    isTargetNull = false;
+                    return;
+                }
+
+                // Visit each connected point
+                for (var i = 0; i < current.points.Length; i++)
+                {
+                    var connected = current.points[i];
+                    var type = current.tipo[i];
+
+                    // Check if the connection allows the enemy to move through it
+                    if (type == Point.Tipo.Vaca)
+                    {
+                        continue;
+                    }
+
+                    // Calculate the distance and update the distances and the priority queue
+                    var distance = distances[current] +
+                                   Vector3.Distance(current.transform.position, connected.transform.position);
+                    if (!distances.ContainsKey(connected) || distance < distances[connected])
+                    {
+                        distances[connected] = distance;
+                        connected.prev = current; // atualiza o "prev" para o ponto atual
+                        pq.Enqueue(connected, distance);
+                    }
+                }
+            }
+
+            isTargetNull = false;
+        }
     }
 }

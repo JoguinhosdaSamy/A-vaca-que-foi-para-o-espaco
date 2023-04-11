@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Point : MonoBehaviour
@@ -13,6 +14,29 @@ public class Point : MonoBehaviour
     private readonly Color _yellowLine = Color.yellow;
     private GameController controller;
     public Prop Property;
+    public Point prev; // novo atributo
+
+
+
+
+    private void OnDrawGizmos()
+    {
+        for (var i = 0; i < points.Length; i++)
+        {
+            Gizmos.color = Color.white;
+            switch (tipo[i])
+            {
+                case Tipo.Alien:
+                    Gizmos.color = _redLine;
+                    break;
+                case Tipo.Vaca:
+                    Gizmos.color = _yellowLine;
+                    break;
+                    
+            }
+            Gizmos.DrawLine(transform.position, points[i].transform.position);
+        }
+    }
     
     void Start()
     {
@@ -61,4 +85,61 @@ public class Point : MonoBehaviour
             }
         }
     }
+    
+    public void UpdateConnectedPoints()
+    {
+        for (int i = 0; i < points.Length; i++)
+        {
+            if (points[i].prev == this)
+            {
+                points[i].tipo[i] = tipo[i];
+                points[i].UpdateConnectedPoints();
+            }
+        }
+    }
+}
+
+[CustomEditor(typeof(Point), true)]
+public class PointEditor : Editor
+{
+    SerializedProperty pointsProperty;
+    SerializedProperty tipoProperty;
+
+    private void OnEnable()
+    {
+        pointsProperty = serializedObject.FindProperty("points");
+        tipoProperty = serializedObject.FindProperty("tipo");
+
+        serializedObject.ApplyModifiedProperties();
+
+    }
+    
+
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+
+        EditorGUILayout.PropertyField(pointsProperty, true);
+
+        if (pointsProperty.arraySize > 0)
+        {
+            EditorGUILayout.Space();
+
+            EditorGUILayout.LabelField("Tipo de cada ponto", EditorStyles.boldLabel);
+
+            EditorGUI.indentLevel++;
+
+            for (int i = 0; i < pointsProperty.arraySize; i++)
+            {
+
+                string pointName = pointsProperty.GetArrayElementAtIndex(i).objectReferenceValue.name;
+                EditorGUILayout.PropertyField(tipoProperty.GetArrayElementAtIndex(i), new GUIContent(pointName));
+            }
+
+            EditorGUI.indentLevel--;
+        }
+
+        serializedObject.ApplyModifiedProperties();
+    }
+
 }
