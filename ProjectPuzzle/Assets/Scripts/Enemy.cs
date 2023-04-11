@@ -62,29 +62,25 @@ public class Enemy : MonoBehaviour
                 controller.SetMovementStatus(GameController.Movement.Vaca);
                 return;
             }
-
-            // Initialize the priority queue
+            
             var pq = new PriorityQueue<Point>();
             pq.Enqueue(currentPoint, 0);
 
-            // Initialize the distances
             var distances = new Dictionary<Point, float>();
             distances[currentPoint] = 0;
 
             while (pq.Count > 0)
             {
-                // Get the next point to visit
+
                 var current = pq.Dequeue();
 
-                // Check if we've reached the target
                 if (current == target.target)
                 {
-                    // Reconstruct the path and set the nextPoint
                     var path = new List<Point>();
                     while (current != currentPoint)
                     {
                         path.Add(current);
-                        current = current.prev; // atualiza o "prev" para o próximo ponto no caminho
+                        current = current.prev; 
                     }
 
                     path.Reverse();
@@ -94,25 +90,22 @@ public class Enemy : MonoBehaviour
                     return;
                 }
 
-                // Visit each connected point
                 for (var i = 0; i < current.points.Length; i++)
                 {
                     var connected = current.points[i];
                     var type = current.tipo[i];
 
-                    // Check if the connection allows the enemy to move through it
                     if (type == Point.Tipo.Vaca)
                     {
                         continue;
                     }
 
-                    // Calculate the distance and update the distances and the priority queue
                     var distance = distances[current] +
                                    Vector3.Distance(current.transform.position, connected.transform.position);
                     if (!distances.ContainsKey(connected) || distance < distances[connected])
                     {
                         distances[connected] = distance;
-                        connected.prev = current; // atualiza o "prev" para o ponto atual
+                        connected.prev = current;
                         pq.Enqueue(connected, distance);
                     }
                 }
