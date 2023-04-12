@@ -552,6 +552,7 @@ MonoBehaviour:
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   Property: 0
+  prev: {fileID: 0}
 --- !u!108 &456119583
 Light:
   m_ObjectHideFlags: 0
@@ -670,6 +671,7 @@ MonoBehaviour:
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   Property: 0
+  prev: {fileID: 0}
 --- !u!135 &482814522
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6077,6 +6079,7 @@ MonoBehaviour:
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   Property: 0
+  prev: {fileID: 0}
 --- !u!108 &686392441
 Light:
   m_ObjectHideFlags: 0
@@ -6996,6 +6999,7 @@ MonoBehaviour:
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   Property: 0
+  prev: {fileID: 0}
 --- !u!135 &1061488199
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7241,6 +7245,7 @@ MonoBehaviour:
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   Property: 0
+  prev: {fileID: 0}
 --- !u!108 &1176566307
 Light:
   m_ObjectHideFlags: 0
@@ -7360,6 +7365,7 @@ MonoBehaviour:
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   Property: 0
+  prev: {fileID: 0}
 --- !u!135 &1203570683
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7519,10 +7525,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4715149ac25ff48b3ce4d2fa4ce177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointActual: {fileID: 1937477260}
-  directionGo: {fileID: 0}
-  _istargetNull: 0
-  counter: 1
+  currentPoint: {fileID: 1061488198}
+  nextPoint: {fileID: 1061488197}
+  counter: 2
 --- !u!136 &1211573473
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12599,6 +12604,7 @@ MonoBehaviour:
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   Property: 0
+  prev: {fileID: 0}
 --- !u!108 &1253899036
 Light:
   m_ObjectHideFlags: 0
@@ -13304,10 +13310,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 1061488198}
-  tipo: 00000000
+  tipo: 02000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   Property: 1
+  prev: {fileID: 0}
 --- !u!135 &1937477261
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -37,6 +37,9 @@ public class Enemy : MonoBehaviour
         if (dir.magnitude > 0.1f)
         {
             transform.Translate(dir.normalized * (3.0f * Time.deltaTime), Space.World);
+            Vector3 rot = dir.normalized;
+            rot.y = transform.position.y;
+            transform.rotation = Quaternion.LookRotation(dir.normalized);
         }
         else
         {
