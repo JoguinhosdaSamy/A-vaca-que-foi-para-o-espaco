@@ -1,49 +1,52 @@
+using System.Collections;
 using UnityEngine;
 
 public class Highlight : MonoBehaviour
 {
-    private static Highlight instance;
+  public float blinkSpeed = 0.1f; // A velocidade do piscar
+  public float blinkDuration = 1.0f; // A duração do piscar
+  public Material defaultMaterial; // O material padrão do objeto
+  public Material blinkingMaterial; // O material que faz o objeto piscar
+  private Renderer rend;
+  private bool isBlinking = false; // Flag que indica se o objeto está piscando ou não
 
-    // Material usado para destacar o objeto
-    public Material highlightMaterial;
+  void Start() 
+  {
+    rend = GetComponent<Renderer>();
+    rend.material = defaultMaterial;
+  }
 
-    // Salva o material original do objeto
-    private Material originalMaterial;
-
-    // Armazena o objeto atualmente em destaque
-    private GameObject currentHighlightedObject;
-
-    // Obtém a instância única do script
-    public static Highlight GetInstance() {
-        if (instance == null) {
-            instance = new Highlight();
-        }
-        return instance;
-    }
-
-    // Destaca o objeto especificado
-    public void HighlightObject(GameObject objectToHighlight) {
-        // Remove o highlight do objeto anterior
-        RemoveHighlight();
-
-        // Armazena o objeto atualmente em destaque
-        currentHighlightedObject = objectToHighlight;
-
-        // Salva o material original do objeto
-        originalMaterial = objectToHighlight.GetComponent<Renderer>().material;
-
-        // Define o material de highlight no objeto
-        objectToHighlight.GetComponent<Renderer>().material = highlightMaterial;
-    }
-
-    // Remove o highlight do objeto atualmente em destaque
-    public void RemoveHighlight() {
-        if (currentHighlightedObject != null) {
-            // Restaura o material original do objeto
-            currentHighlightedObject.GetComponent<Renderer>().material = originalMaterial;
-
-            // Limpa a referência do objeto atualmente em destaque
-            currentHighlightedObject = null;
+  void Update() 
+  {
+    RaycastHit hit;
+    if (Physics.Raycast(transform.position, transform.forward, out hit))
+    {
+        if (hit.transform.CompareTag("Player"))
+        {
+            if (!isBlinking)
+            {
+                StartCoroutine(Blink());
+            }
         }
     }
-}
+  }
+
+  IEnumerator Blink() 
+  {
+    isBlinking = true;
+    float time = 0;
+    while (time < blinkDuration)
+    {
+        rend.material = blinkingMaterial;
+        yield return new WaitForSeconds(blinkSpeed);
+        rend.material = defaultMaterial;
+        yield return new WaitForSeconds(blinkSpeed);
+        time += 2 * blinkSpeed;
+    }
+    isBlinking = false;
+  }
+}  
+
+
+
+
