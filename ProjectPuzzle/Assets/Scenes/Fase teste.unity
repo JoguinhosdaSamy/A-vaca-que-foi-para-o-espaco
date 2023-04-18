@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 456119582}
   - component: {fileID: 456119583}
   m_Layer: 0
-  m_Name: way01
+  m_Name: way_inicial
   m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6993,7 +6993,6 @@ MonoBehaviour:
   points:
   - {fileID: 686392440}
   - {fileID: 482814521}
-  - {fileID: 1203570682}
   - {fileID: 1937477260}
   tipo: 01000000000000000200000002000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
@@ -7358,10 +7357,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {fileID: 1061488198}
   - {fileID: 686392440}
   - {fileID: 1253899035}
-  tipo: 020000000000000000000000
+  tipo: 0000000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   Property: 0
@@ -12802,7 +12800,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.02
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -13274,7 +13272,7 @@ GameObject:
   - component: {fileID: 1937477260}
   - component: {fileID: 1937477264}
   m_Layer: 0
-  m_Name: way08
+  m_Name: way_final
   m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
