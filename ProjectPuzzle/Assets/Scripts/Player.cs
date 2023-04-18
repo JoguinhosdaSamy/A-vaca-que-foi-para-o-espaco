@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
              _istargetNull = true;
              controller.SetMovementStatus(GameController.Movement.Alien);
              CheckCondition();
+             CheckDie();
          }
      }
     private void CheckCondition()
@@ -60,5 +61,13 @@ public class Player : MonoBehaviour
                 break;
         }
         
+    }
+    
+   private void CheckDie()
+    {
+        if (target == enemy.currentPoint)
+        {
+            controller.GameOver();
+        }
     }
 }
