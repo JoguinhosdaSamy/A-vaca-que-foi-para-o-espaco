@@ -43,6 +43,7 @@ public class GameController : MonoBehaviour
         Enemy.counter = SleepPowerUp;
     }
 }
+#if UNITY_EDITOR
 [CustomEditor(typeof(GameController), true)]
 public class GameControllerEditor : Editor
 {
@@ -80,3 +81,4 @@ public class GameControllerEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 }
+#endif
