@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public Point currentPoint;
     public Transform nextPoint;
     private bool isTargetNull;
+    public float speed = 4.0f;
     public int counter;
 
     private void Start()
@@ -36,7 +37,7 @@ public class Enemy : MonoBehaviour
         Vector3 dir = nextPoint.position - transform.position;
         if (dir.magnitude > 0.1f)
         {
-            transform.Translate(dir.normalized * (3.0f * Time.deltaTime), Space.World);
+            transform.Translate(dir.normalized * (speed * Time.deltaTime), Space.World);
             Vector3 rot = dir.normalized;
             rot.y = transform.position.y;
             transform.rotation = Quaternion.LookRotation(dir.normalized);
@@ -44,7 +45,10 @@ public class Enemy : MonoBehaviour
         else
         {
             isTargetNull = true;
+            //verificar se a Vaca está em um ponto, e o único caminho possível não é um ponto ocupado pelo Alien 
             controller.SetMovementStatus(GameController.Movement.Vaca);
+            // caso contrário, mais um turno para o alien
+
         }
     }
 

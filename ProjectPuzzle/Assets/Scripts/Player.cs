@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public Point target;
     public static Player player;
     public Enemy enemy;
+    public float speed = 4.0f;
     [HideInInspector]
     public bool _istargetNull;
 
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
          Vector3 dir = target.transform.position - transform.position;
          if (dir.magnitude > 0.1)
          {
-            transform.Translate(dir.normalized * (3.0f * Time.deltaTime), Space.World);
+            transform.Translate(dir.normalized * (speed * Time.deltaTime), Space.World);
             Vector3 rot = dir.normalized;
             rot.y = transform.position.y;
             transform.rotation = Quaternion.LookRotation(dir.normalized);
