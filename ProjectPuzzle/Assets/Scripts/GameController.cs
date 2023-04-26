@@ -72,7 +72,7 @@ public class GameControllerEditor : Editor
         if (EditorGUI.EndChangeCheck())
         {
             var newPath = AssetDatabase.GetAssetPath(newScene);
-            var scenePathProperty = serializedObject.FindProperty("NextScene");
+            var scenePathProperty = serializedObject.FindProperty("nextScene");
             scenePathProperty.stringValue = newPath;
         }
         
