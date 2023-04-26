@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -387,12 +387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 686392433}
-  - {fileID: 1203570680}
-  light: {fileID: 106068326}
-  player: {fileID: 0}
-  distanceThreshold: 2.1
 --- !u!1 &247051723
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +613,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -690,7 +684,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+      objectReference: {fileID: 2100000, guid: 3bcac8db36d6e4a499621d32474e4980, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_Name
@@ -918,11 +912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 1176566298}
-  light: {fileID: 456119583}
-  player: {fileID: 0}
-  distanceThreshold: 2.1
 --- !u!1 &482814519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,12 +1127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 1176566298}
-  - {fileID: 1061488196}
-  light: {fileID: 482814525}
-  player: {fileID: 0}
-  distanceThreshold: 2.1
 --- !u!1 &570398140
 GameObject:
   m_ObjectHideFlags: 0
@@ -6524,11 +6507,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 106068324}
-  light: {fileID: 686392441}
-  player: {fileID: 0}
-  distanceThreshold: 2.1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -6906,7 +6884,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+      objectReference: {fileID: 2100000, guid: 3bcac8db36d6e4a499621d32474e4980, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_Icon
@@ -7000,7 +6978,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+      objectReference: {fileID: 2100000, guid: 3bcac8db36d6e4a499621d32474e4980, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_Name
@@ -7227,7 +7205,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0.20392157, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -7464,7 +7442,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+      objectReference: {fileID: 2100000, guid: 3bcac8db36d6e4a499621d32474e4980, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_Name
@@ -7559,7 +7537,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+      objectReference: {fileID: 2100000, guid: 3bcac8db36d6e4a499621d32474e4980, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_Name
@@ -7789,12 +7767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 1937477258}
-  - {fileID: 482814519}
-  light: {fileID: 1061488202}
-  player: {fileID: 0}
-  distanceThreshold: 2.1
 --- !u!4 &1157295937 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2394810747155667326, guid: 81be34c6f58b348979390b2bc7d8cdb1,
@@ -8017,13 +7989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 456119575}
-  - {fileID: 1253899029}
-  - {fileID: 482814519}
-  light: {fileID: 1176566307}
-  player: {fileID: 0}
-  distanceThreshold: 2.1
 --- !u!1 &1203570680
 GameObject:
   m_ObjectHideFlags: 0
@@ -8239,12 +8204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 106068324}
-  - {fileID: 1253899029}
-  light: {fileID: 1203570686}
-  player: {fileID: 0}
-  distanceThreshold: 5.99
 --- !u!1 &1211573471
 GameObject:
   m_ObjectHideFlags: 0
@@ -13455,12 +13414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 1176566298}
-  - {fileID: 1203570680}
-  light: {fileID: 1253899036}
-  player: {fileID: 0}
-  distanceThreshold: 2.1
 --- !u!1001 &1254918933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13542,7 +13495,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+      objectReference: {fileID: 2100000, guid: 3bcac8db36d6e4a499621d32474e4980, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_Name
@@ -13637,7 +13590,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+      objectReference: {fileID: 2100000, guid: 3bcac8db36d6e4a499621d32474e4980, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_Name
@@ -13841,7 +13794,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+      objectReference: {fileID: 2100000, guid: 3bcac8db36d6e4a499621d32474e4980, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_Name
@@ -14172,11 +14125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 1061488196}
-  light: {fileID: 1937477264}
-  player: {fileID: 0}
-  distanceThreshold: 2.1
 --- !u!4 &1995423277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
@@ -14193,7 +14141,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -14264,7 +14212,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+      objectReference: {fileID: 2100000, guid: 3bcac8db36d6e4a499621d32474e4980, type: 2}
     - target: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_Name
