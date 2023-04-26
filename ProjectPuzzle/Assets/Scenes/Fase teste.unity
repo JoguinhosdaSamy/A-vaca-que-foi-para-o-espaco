@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -218,7 +218,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106068324}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -291,8 +291,9 @@ MonoBehaviour:
   tipo: 0000000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  Property: 0
+  property: 0
   prev: {fileID: 0}
+  light: {fileID: 0}
 --- !u!135 &106068328
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -390,6 +391,7 @@ MonoBehaviour:
   - {fileID: 686392433}
   - {fileID: 1203570680}
   light: {fileID: 106068326}
+  player: {fileID: 0}
   distanceThreshold: 2.1
 --- !u!1 &247051723
 GameObject:
@@ -821,8 +823,9 @@ MonoBehaviour:
   tipo: 02000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  Property: 0
+  property: 0
   prev: {fileID: 0}
+  light: {fileID: 0}
 --- !u!108 &456119583
 Light:
   m_ObjectHideFlags: 0
@@ -830,7 +833,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456119575}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -918,6 +921,7 @@ MonoBehaviour:
   points:
   - {fileID: 1176566298}
   light: {fileID: 456119583}
+  player: {fileID: 0}
   distanceThreshold: 2.1
 --- !u!1 &482814519
 GameObject:
@@ -976,8 +980,9 @@ MonoBehaviour:
   tipo: 0000000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  Property: 0
+  property: 0
   prev: {fileID: 0}
+  light: {fileID: 0}
 --- !u!135 &482814522
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1048,7 +1053,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482814519}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -1137,6 +1142,7 @@ MonoBehaviour:
   - {fileID: 1176566298}
   - {fileID: 1061488196}
   light: {fileID: 482814525}
+  player: {fileID: 0}
   distanceThreshold: 2.1
 --- !u!1 &570398140
 GameObject:
@@ -1295,7 +1301,7 @@ MonoBehaviour:
   target: {fileID: 456119582}
   enemy: {fileID: 1211573472}
   speed: 4
-  _istargetNull: 0
+  istargetNull: 0
 --- !u!199 &594615090
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -6423,8 +6429,9 @@ MonoBehaviour:
   tipo: 0000000001000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  Property: 0
+  property: 0
   prev: {fileID: 0}
+  light: {fileID: 0}
 --- !u!108 &686392441
 Light:
   m_ObjectHideFlags: 0
@@ -6432,7 +6439,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686392433}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -6520,6 +6527,7 @@ MonoBehaviour:
   points:
   - {fileID: 106068324}
   light: {fileID: 686392441}
+  player: {fileID: 0}
   distanceThreshold: 2.1
 --- !u!1 &705507993
 GameObject:
@@ -7219,7 +7227,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.09668918, g: 0.14421758, b: 0.5283019, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -7371,10 +7379,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5becf49c0c80e44987d7485a7f63ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementStatus: 0
-  Enemy: {fileID: 0}
-  NextScene: Assets/Scenes/Menu.unity
-  SleepPowerUp: 3
+  movementStatus: 0
+  enemy: {fileID: 0}
+  nextScene: Assets/Scenes/Menu.unity
+  sleepPowerUp: 3
 --- !u!1001 &1008709743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7623,8 +7631,9 @@ MonoBehaviour:
   tipo: 01000000000000000200000002000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  Property: 0
+  property: 0
   prev: {fileID: 0}
+  light: {fileID: 0}
 --- !u!135 &1061488199
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7695,7 +7704,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061488196}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -7784,6 +7793,7 @@ MonoBehaviour:
   - {fileID: 1937477258}
   - {fileID: 482814519}
   light: {fileID: 1061488202}
+  player: {fileID: 0}
   distanceThreshold: 2.1
 --- !u!4 &1157295937 stripped
 Transform:
@@ -7912,8 +7922,9 @@ MonoBehaviour:
   tipo: 020000000000000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  Property: 0
+  property: 0
   prev: {fileID: 0}
+  light: {fileID: 0}
 --- !u!108 &1176566307
 Light:
   m_ObjectHideFlags: 0
@@ -7921,7 +7932,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176566298}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -8011,6 +8022,7 @@ MonoBehaviour:
   - {fileID: 1253899029}
   - {fileID: 482814519}
   light: {fileID: 1176566307}
+  player: {fileID: 0}
   distanceThreshold: 2.1
 --- !u!1 &1203570680
 GameObject:
@@ -8069,8 +8081,9 @@ MonoBehaviour:
   tipo: 0000000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  Property: 0
+  property: 0
   prev: {fileID: 0}
+  light: {fileID: 0}
 --- !u!135 &1203570683
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8141,13 +8154,13 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203570680}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
   m_Intensity: 8
-  m_Range: 3.4610977
+  m_Range: 1.71
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -8230,7 +8243,8 @@ MonoBehaviour:
   - {fileID: 106068324}
   - {fileID: 1253899029}
   light: {fileID: 1203570686}
-  distanceThreshold: 2.1
+  player: {fileID: 0}
+  distanceThreshold: 5.99
 --- !u!1 &1211573471
 GameObject:
   m_ObjectHideFlags: 0
@@ -13346,8 +13360,9 @@ MonoBehaviour:
   tipo: 0000000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  Property: 0
+  property: 0
   prev: {fileID: 0}
+  light: {fileID: 0}
 --- !u!108 &1253899036
 Light:
   m_ObjectHideFlags: 0
@@ -13355,7 +13370,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253899029}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -13444,6 +13459,7 @@ MonoBehaviour:
   - {fileID: 1176566298}
   - {fileID: 1203570680}
   light: {fileID: 1253899036}
+  player: {fileID: 0}
   distanceThreshold: 2.1
 --- !u!1001 &1254918933
 PrefabInstance:
@@ -13998,8 +14014,9 @@ MonoBehaviour:
   tipo: 02000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  Property: 1
+  property: 1
   prev: {fileID: 0}
+  light: {fileID: 0}
 --- !u!135 &1937477261
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14070,7 +14087,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937477258}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -14158,6 +14175,7 @@ MonoBehaviour:
   points:
   - {fileID: 1061488196}
   light: {fileID: 1937477264}
+  player: {fileID: 0}
   distanceThreshold: 2.1
 --- !u!4 &1995423277 stripped
 Transform:
