@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -386,8 +386,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  points:
+  - {fileID: 686392433}
+  - {fileID: 1203570680}
   light: {fileID: 106068326}
+  distanceThreshold: 2.1
 --- !u!1 &247051723
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 306040440}
   m_Layer: 0
-  m_Name: estrelas bkgrd
+  m_Name: Back Estrelas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -912,8 +915,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  points:
+  - {fileID: 1176566298}
   light: {fileID: 456119583}
+  distanceThreshold: 2.1
 --- !u!1 &482814519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,8 +1133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  points:
+  - {fileID: 1176566298}
+  - {fileID: 1061488196}
   light: {fileID: 482814525}
+  distanceThreshold: 2.1
 --- !u!1 &570398140
 GameObject:
   m_ObjectHideFlags: 0
@@ -6509,8 +6517,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  points:
+  - {fileID: 106068324}
   light: {fileID: 686392441}
+  distanceThreshold: 2.1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -7691,7 +7701,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_Intensity: 8
-  m_Range: 1.71
+  m_Range: 1.2316804
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -7770,8 +7780,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  points:
+  - {fileID: 1937477258}
+  - {fileID: 482814519}
   light: {fileID: 1061488202}
+  distanceThreshold: 2.1
 --- !u!4 &1157295937 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2394810747155667326, guid: 81be34c6f58b348979390b2bc7d8cdb1,
@@ -7993,8 +8006,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  points:
+  - {fileID: 456119575}
+  - {fileID: 1253899029}
+  - {fileID: 482814519}
   light: {fileID: 1176566307}
+  distanceThreshold: 2.1
 --- !u!1 &1203570680
 GameObject:
   m_ObjectHideFlags: 0
@@ -8209,8 +8226,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  points:
+  - {fileID: 106068324}
+  - {fileID: 1253899029}
   light: {fileID: 1203570686}
+  distanceThreshold: 2.1
 --- !u!1 &1211573471
 GameObject:
   m_ObjectHideFlags: 0
@@ -13420,8 +13440,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  points:
+  - {fileID: 1176566298}
+  - {fileID: 1203570680}
   light: {fileID: 1253899036}
+  distanceThreshold: 2.1
 --- !u!1001 &1254918933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14132,8 +14155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35008b5838a33de418175eb0d82b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  points:
+  - {fileID: 1061488196}
   light: {fileID: 1937477264}
+  distanceThreshold: 2.1
 --- !u!4 &1995423277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
