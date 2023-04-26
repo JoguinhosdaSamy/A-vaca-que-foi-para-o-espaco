@@ -7,30 +7,32 @@ using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
-    private GameController controller;
-    private Player target;
+    private GameController _controller;
+    private Player _target;
     public Point currentPoint;
     public Transform nextPoint;
-    private bool isTargetNull;
+    private bool _isTargetNull;
     public float speed = 4.0f;
     public int counter;
 
     private void Start()
     {
-        controller = GameObject.Find("GameController").GetComponent<GameController>();
-        target = GameObject.Find("Player").GetComponent<Player>();
-        isTargetNull = target == null;
+        _controller = GameObject.Find("GameController").GetComponent<GameController>();
+        _target = GameObject.Find("Player").GetComponent<Player>();
+        _isTargetNull = _target == null;
         nextPoint = currentPoint.transform;
     }
 
     private void FixedUpdate()
     {
-        if (controller.MovementStatus != GameController.Movement.Alien) return;
-        if (isTargetNull) return;
+        if (_controller.movementStatus != GameController.Movement.Alien) return;
+        if (_isTargetNull) return;
         if (counter != 0)
         {
             counter--;
-            controller.SetMovementStatus(GameController.Movement.Vaca);
+            _target.target.ShowLights();
+            _controller.SetMovementStatus(GameController.Movement.Vaca);
+            _target.CheckPossibilities();
             return;
         }
 
@@ -44,19 +46,19 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            isTargetNull = true;
-            //verificar se a Vaca está em um ponto, e o único caminho possível não é um ponto ocupado pelo Alien 
-            controller.SetMovementStatus(GameController.Movement.Vaca);
-            // caso contrário, mais um turno para o alien
+            _isTargetNull = true;
+            _target.target.ShowLights();
+            _controller.SetMovementStatus(GameController.Movement.Vaca);
+            _target.CheckPossibilities();
 
         }
     }
 
     private void CheckDie()
     {
-        if (currentPoint == target.target)
+        if (currentPoint == _target.target)
         {
-            controller.GameOver();
+            _controller.GameOver();
         }
     }
 
@@ -64,9 +66,11 @@ public class Enemy : MonoBehaviour
     {
         if (counter == 0)
         {
-            if (target.target == currentPoint)
+            if (_target.target == currentPoint)
             {
-                controller.SetMovementStatus(GameController.Movement.Vaca);
+                _target.target.ShowLights();
+                _controller.SetMovementStatus(GameController.Movement.Vaca);
+                _target.CheckPossibilities();
                 return;
             }
             
@@ -81,7 +85,7 @@ public class Enemy : MonoBehaviour
 
                 var current = pq.Dequeue();
 
-                if (current == target.target)
+                if (current == _target.target)
                 {
                     var path = new List<Point>();
                     while (current != currentPoint)
@@ -93,7 +97,7 @@ public class Enemy : MonoBehaviour
                     path.Reverse();
                     nextPoint = path[0].transform;
                     currentPoint = path[0];
-                    isTargetNull = false;
+                    _isTargetNull = false;
                     return;
                 }
 
@@ -118,7 +122,7 @@ public class Enemy : MonoBehaviour
                 }
             }
 
-            isTargetNull = false;
+            _isTargetNull = false;
         }
     }
 }

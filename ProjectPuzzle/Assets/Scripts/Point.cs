@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Point : MonoBehaviour
 {
@@ -8,16 +9,14 @@ public class Point : MonoBehaviour
     public enum Prop {None, EndPoint, SleepPower};
     public Point[] points;
     public Tipo[] tipo;
-    private List<GameObject> lines = new List<GameObject>();
+    private List<GameObject> _lines = new List<GameObject>();
     public GameObject linhasPrefab;
     private readonly Color _redLine = Color.red;
     private readonly Color _yellowLine = Color.yellow;
-    private GameController controller;
-    public Prop Property;
+    private GameController _controller;
+    [FormerlySerializedAs("Property")] public Prop property;
     public Point prev; // novo atributo
-
-
-
+    public Light light;
 
     private void OnDrawGizmos()
     {
@@ -40,7 +39,8 @@ public class Point : MonoBehaviour
     
     void Start()
     {
-        controller = GameObject.Find("GameController").GetComponent<GameController>();
+        light = GetComponent<Light>();
+        _controller = GameObject.Find("GameController").GetComponent<GameController>();
         
         for (var i = 0; i < points.Length; i++)
         {
@@ -60,16 +60,17 @@ public class Point : MonoBehaviour
                     
             }
 
-            lines.Add(linha);
+            _lines.Add(linha);
             lineRenderer.SetPosition(0, position);
             lineRenderer.SetPosition(1, points[i].transform.position);
         }
+        
     }
 
 
     void OnMouseDown()
     {
-        if(controller.MovementStatus == GameController.Movement.Vaca){
+        if(_controller.movementStatus == GameController.Movement.Vaca){
             Point[] listaPoints = Player.player.target.GetComponent<Point>().points;
             Tipo[] listaTarget = Player.player.target.GetComponent<Point>().tipo;
             for (var i = 0; i < listaPoints.Length; i++){
@@ -78,9 +79,11 @@ public class Point : MonoBehaviour
                     {
                         return;
                     }
-                    controller.SetMovementStatus(GameController.Movement.Moving);
+
+                    HideLights();
+                    _controller.SetMovementStatus(GameController.Movement.Moving);
                     Player.player.target = this;
-                    Player.player._istargetNull = false;
+                    Player.player.istargetNull = false;
                 }
             }
         }
@@ -95,6 +98,27 @@ public class Point : MonoBehaviour
                 points[i].tipo[i] = tipo[i];
                 points[i].UpdateConnectedPoints();
             }
+        }
+    }
+
+    public void ShowLights()
+    {
+        for (var i = 0; i < points.Length; i++)
+        {
+            
+            if (tipo[i] == Tipo.Alien)
+            {
+                return;
+            }
+
+            points[i].light.enabled = true;
+        }
+    }
+
+    private void HideLights()
+    {
+        for (var i = 0; i < points.Length; i++){
+            points[i].light.enabled = false;
         }
     }
 }

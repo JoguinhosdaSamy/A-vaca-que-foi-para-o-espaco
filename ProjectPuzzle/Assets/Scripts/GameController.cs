@@ -4,32 +4,33 @@ using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class GameController : MonoBehaviour
 {
     public enum Movement {Moving, Alien, Vaca};
-    [SerializeField] public Movement MovementStatus ;
-    public Enemy Enemy;
-    [SerializeField] public string NextScene;
-    [SerializeField] public int SleepPowerUp;
+    [SerializeField] public Movement movementStatus ;
+    public Enemy enemy;
+    [SerializeField] public string nextScene;
+    [SerializeField] public int sleepPowerUp;
 
     void Start()
     {
-        Enemy = GameObject.Find("Enemy").GetComponent<Enemy>();
-        MovementStatus = Movement.Moving;
+        enemy = GameObject.Find("Enemy").GetComponent<Enemy>();
+        movementStatus = Movement.Moving;
     }
 
     public void SetMovementStatus(Movement tipo)
     {
         if (tipo == Movement.Alien)
         {
-            Enemy.FindShortestPath();
+            enemy.FindShortestPath();
         }
-        MovementStatus = tipo;
+        movementStatus = tipo;
     }
     public void Victory()
     {
-        SceneManager.LoadScene(NextScene);
+        SceneManager.LoadScene(nextScene);
     }
     
     public void GameOver()
@@ -40,30 +41,30 @@ public class GameController : MonoBehaviour
     
     public void PowerSleep()
     {
-        Enemy.counter = SleepPowerUp;
+        enemy.counter = sleepPowerUp;
     }
 }
 #if UNITY_EDITOR
 [CustomEditor(typeof(GameController), true)]
 public class GameControllerEditor : Editor
 {
-    SerializedProperty powerSleep;
-    SerializedProperty movementStatus;
+    SerializedProperty _powerSleep;
+    SerializedProperty _movementStatus;
     
     void OnEnable()
     {
         // Setup the SerializedProperties.
-        powerSleep = serializedObject.FindProperty ("SleepPowerUp");
-        movementStatus = serializedObject.FindProperty ("MovementStatus");
+        _powerSleep = serializedObject.FindProperty ("sleepPowerUp");
+        _movementStatus = serializedObject.FindProperty ("movementStatus");
     }
     public override void OnInspectorGUI()
     {
         var picker = target as GameController;
-        var oldScene = AssetDatabase.LoadAssetAtPath<SceneAsset>(picker.NextScene);
+        var oldScene = AssetDatabase.LoadAssetAtPath<SceneAsset>(picker.nextScene);
 
         serializedObject.Update();
 
-        EditorGUILayout.IntSlider (powerSleep, 0, 5, new GUIContent ("Counter do enemy(PowerUP)"));
+        EditorGUILayout.IntSlider (_powerSleep, 0, 5, new GUIContent ("Counter do enemy(PowerUP)"));
         
         EditorGUI.BeginChangeCheck();
         var newScene = EditorGUILayout.ObjectField("Proxima Cena", oldScene, typeof(SceneAsset), false) as SceneAsset;
@@ -76,7 +77,7 @@ public class GameControllerEditor : Editor
         }
         
         EditorGUI.BeginDisabledGroup(true);
-        EditorGUILayout.EnumPopup("Status do movimento", (GameController.Movement)movementStatus.intValue);
+        EditorGUILayout.EnumPopup("Status do movimento", (GameController.Movement)_movementStatus.intValue);
         EditorGUI.EndDisabledGroup();
         serializedObject.ApplyModifiedProperties();
     }

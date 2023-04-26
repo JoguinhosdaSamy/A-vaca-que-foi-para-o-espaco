@@ -3,21 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
-    private GameController controller;
+    private GameController _controller;
     public Point target;
     public static Player player;
     public Enemy enemy;
     public float speed = 4.0f;
-    [HideInInspector]
-    public bool _istargetNull;
+    [FormerlySerializedAs("_istargetNull")] [HideInInspector]
+    public bool istargetNull;
 
     void Start()
     {
-        controller = GameObject.Find("GameController").GetComponent<GameController>();
-        _istargetNull = target == null;
+        _controller = GameObject.Find("GameController").GetComponent<GameController>();
+        istargetNull = target == null;
         player = this;
     }
 
@@ -25,13 +26,13 @@ public class Player : MonoBehaviour
      {
          if (target == enemy.currentPoint)
          {
-             if(controller.MovementStatus == GameController.Movement.Vaca){
-                 controller.GameOver();
+             if(_controller.movementStatus == GameController.Movement.Vaca){
+                 _controller.GameOver();
              }
         
          }
          
-         if (_istargetNull) return;
+         if (istargetNull) return;
 
          Vector3 dir = target.transform.position - transform.position;
          if (dir.magnitude > 0.1)
@@ -41,8 +42,8 @@ public class Player : MonoBehaviour
             rot.y = transform.position.y;
             transform.rotation = Quaternion.LookRotation(dir.normalized);
          } else {
-             _istargetNull = true;
-             controller.SetMovementStatus(GameController.Movement.Alien);
+             istargetNull = true;
+             _controller.SetMovementStatus(GameController.Movement.Alien);
              CheckCondition();
              CheckDie();
          }
@@ -50,15 +51,15 @@ public class Player : MonoBehaviour
     private void CheckCondition()
     {
        
-        var targetTag = target.Property;
+        var targetTag = target.property;
 
         switch (targetTag)
         {
             case Point.Prop.EndPoint:
-                controller.Victory();
+                _controller.Victory();
                 break;
             case Point.Prop.SleepPower:
-                controller.PowerSleep();
+                _controller.PowerSleep();
                 break;
         }
         
@@ -68,7 +69,30 @@ public class Player : MonoBehaviour
     {
         if (target == enemy.currentPoint)
         {
-            controller.GameOver();
+            _controller.GameOver();
         }
     }
+
+   public void CheckPossibilities()
+   {
+       Point[] arrayPoints = new Point[target.points.Length];
+
+       for (var i = 0; i < target.points.Length; i++)
+       {
+           if (target.tipo[i] == Point.Tipo.Alien)
+           {
+               return;
+           }
+           
+           arrayPoints[i] = target.points[i];
+       }
+
+       if (arrayPoints.Length == 1)
+       {
+           if (arrayPoints[0] == enemy.currentPoint)
+           {
+               _controller.SetMovementStatus(GameController.Movement.Alien);
+           }
+       }
+   }
 }
