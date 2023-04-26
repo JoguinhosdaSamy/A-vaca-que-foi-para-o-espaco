@@ -1309,7 +1309,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1165679760}
   - component: {fileID: 1165679762}
-  - component: {fileID: 1165679763}
   - component: {fileID: 1165679761}
   m_Layer: 5
   m_Name: "VERS\xC3O"
@@ -1371,7 +1370,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: v0.2.0-prealpha
 --- !u!222 &1165679762
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1380,18 +1379,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165679759}
   m_CullTransparentMesh: 1
---- !u!114 &1165679763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1165679759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43350589f28b6954f9fe8820679d6fbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1371703333
 GameObject:
   m_ObjectHideFlags: 0
