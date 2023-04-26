@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class WayPoint : MonoBehaviour
 {
-    public float radius = 5f;
+    public GameObject[] points;
     public Light light;
 
     private GameObject player;
+
+    public float distanceThreshold = 2.1f;
 
     void Start()
     {
@@ -15,15 +17,19 @@ public class WayPoint : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, player.transform.position);
+        for(int i = 0; i < points.Length; i++)
+        {
+            float distance = Vector3.Distance(points[i].transform.position, player.transform.position);
 
-        if (distance <= radius)
-        {
-            light.enabled = true;
-        }
-        else
-        {
-            light.enabled = false;
+            if (distance <= distanceThreshold)
+            {
+                light.enabled = true;
+                break;
+            }
+            else
+            {
+                light.enabled = false;
+            }
         }
     }
 }
