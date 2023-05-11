@@ -8,16 +8,25 @@ using UnityEngine.Serialization;
 
 public class GameController : MonoBehaviour
 {
+
     public enum Movement {Moving, Alien, Vaca};
     [SerializeField] public Movement movementStatus ;
     public Enemy enemy;
     [SerializeField] public string nextScene;
     [SerializeField] public int sleepPowerUp;
 
+    public GameObject TelaTutorial;
+    public bool Tutorial = true;
+
     void Start()
     {
         enemy = GameObject.Find("Enemy").GetComponent<Enemy>();
         movementStatus = Movement.Moving;
+
+        if (Tutorial)
+        {
+            TelaTutorial.SetActive(true);
+        }
     }
 
     public void SetMovementStatus(Movement tipo)
@@ -44,6 +53,7 @@ public class GameController : MonoBehaviour
         enemy.counter = sleepPowerUp;
     }
 }
+/*
 #if UNITY_EDITOR
 [CustomEditor(typeof(GameController), true)]
 public class GameControllerEditor : Editor
@@ -82,4 +92,4 @@ public class GameControllerEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 }
-#endif
+#endif*/

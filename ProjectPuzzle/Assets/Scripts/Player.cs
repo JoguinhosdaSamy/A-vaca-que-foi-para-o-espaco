@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
         _controller = GameObject.Find("GameController").GetComponent<GameController>();
         istargetNull = target == null;
         player = this;
+
     }
 
     void FixedUpdate()
