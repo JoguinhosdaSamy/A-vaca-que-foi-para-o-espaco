@@ -16,7 +16,10 @@ public class Point : MonoBehaviour
     private GameController _controller;
     [FormerlySerializedAs("Property")] public Prop property;
     public Point prev; // novo atributo
-    public Light light;
+
+    public Material materialAceso;
+    public Material materialApagado;
+    [HideInInspector]public MeshRenderer _meshRenderer;
 
     private void OnDrawGizmos()
     {
@@ -39,8 +42,8 @@ public class Point : MonoBehaviour
     
     void Start()
     {
-        light = GetComponent<Light>();
         _controller = GameObject.Find("GameController").GetComponent<GameController>();
+        _meshRenderer = GetComponent<MeshRenderer>();
         
         for (var i = 0; i < points.Length; i++)
         {
@@ -74,6 +77,8 @@ public class Point : MonoBehaviour
             Point[] listaPoints = Player.player.target.GetComponent<Point>().points;
             Tipo[] listaTarget = Player.player.target.GetComponent<Point>().tipo;
             for (var i = 0; i < listaPoints.Length; i++){
+                
+                Debug.Log(transform);
                 if (listaPoints[i].transform == transform){
                     if (listaTarget[i] == Tipo.Alien)
                     {
@@ -111,14 +116,17 @@ public class Point : MonoBehaviour
                 return;
             }
 
-            points[i].light.enabled = true;
+            points[i]._meshRenderer.material = points[i].materialAceso;
         }
     }
 
     private void HideLights()
     {
-        for (var i = 0; i < points.Length; i++){
-            points[i].light.enabled = false;
+        Point[] points = FindObjectsOfType<Point>();
+
+        foreach (Point point in points)
+        {
+            point._meshRenderer.material = point.materialApagado;
         }
     }
 }
