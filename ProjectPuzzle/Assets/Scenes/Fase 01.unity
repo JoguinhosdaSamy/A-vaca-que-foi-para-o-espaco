@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -417,7 +417,7 @@ MonoBehaviour:
     type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 2100000, guid: 868153c50ad59ad4a93a2fe15ceca3ae, type: 2}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &255163150
@@ -464,7 +464,7 @@ MonoBehaviour:
     type: 3}
   property: 2
   prev: {fileID: 0}
-  materialAceso: {fileID: 2100000, guid: d3c3afd6aefc95b4f94bb0006d0ca0ee, type: 2}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: 9bd1a57ce6a2743458c981612ce92a4a, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &291524103
@@ -640,7 +640,7 @@ MonoBehaviour:
     type: 3}
   property: 1
   prev: {fileID: 0}
-  materialAceso: {fileID: 2100000, guid: 868153c50ad59ad4a93a2fe15ceca3ae, type: 2}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &496897558
@@ -804,14 +804,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 780474595}
-  - {fileID: 1531927516}
-  - {fileID: 2040598235}
   - {fileID: 2027635455}
   - {fileID: 291524106}
   - {fileID: 1212949698}
+  - {fileID: 2040598235}
   - {fileID: 255163153}
+  - {fileID: 780474595}
   - {fileID: 645253816}
+  - {fileID: 1531927516}
   - {fileID: 625952918}
   - {fileID: 496897556}
   m_Father: {fileID: 0}
@@ -5803,8 +5803,7 @@ MonoBehaviour:
     type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: -6478536213147159724, guid: c68487cccf8aa4391a1cb45cb85ae7f3,
-    type: 3}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &625952915
@@ -5951,7 +5950,7 @@ MonoBehaviour:
     type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 2100000, guid: 868153c50ad59ad4a93a2fe15ceca3ae, type: 2}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &645253813
@@ -6359,7 +6358,7 @@ MonoBehaviour:
     type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 2100000, guid: 868153c50ad59ad4a93a2fe15ceca3ae, type: 2}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &780474592
@@ -11929,7 +11928,7 @@ MonoBehaviour:
     type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 2100000, guid: 868153c50ad59ad4a93a2fe15ceca3ae, type: 2}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &1212949695
@@ -12437,7 +12436,7 @@ MonoBehaviour:
     type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 2100000, guid: 868153c50ad59ad4a93a2fe15ceca3ae, type: 2}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &1531927513
@@ -13191,7 +13190,7 @@ MonoBehaviour:
     type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 2100000, guid: 868153c50ad59ad4a93a2fe15ceca3ae, type: 2}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &2027635452
@@ -13238,7 +13237,7 @@ MonoBehaviour:
     type: 3}
   property: 2
   prev: {fileID: 0}
-  materialAceso: {fileID: 2100000, guid: d3c3afd6aefc95b4f94bb0006d0ca0ee, type: 2}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: 9bd1a57ce6a2743458c981612ce92a4a, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &2040598232
