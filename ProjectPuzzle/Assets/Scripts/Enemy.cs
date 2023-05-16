@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -126,3 +127,35 @@ public class Enemy : MonoBehaviour
         }
     }
 }
+
+#if UNITY_EDITOR
+
+[CustomEditor(typeof(Enemy))]
+public class EnemyEditor : Editor
+{
+    private SerializedProperty _speed;
+    private SerializedProperty _counter;
+    private SerializedProperty _currentPoint;
+
+    private void OnEnable()
+    {
+        _speed = serializedObject.FindProperty("speed");
+        _counter = serializedObject.FindProperty("counter");
+        _currentPoint = serializedObject.FindProperty("currentPoint");
+    }
+
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+
+        EditorGUILayout.Slider(_speed, 0.1f, 10f, new GUIContent("Speed"));
+        EditorGUILayout.IntSlider(_counter, 0, 10, new GUIContent("Counter"));
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        GUIContent targetLabel = new GUIContent("WayPoint Inicial");
+        EditorGUILayout.PropertyField(_currentPoint,targetLabel);
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+#endif

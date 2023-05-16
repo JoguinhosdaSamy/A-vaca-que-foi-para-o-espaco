@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -76,20 +77,22 @@ public class Player : MonoBehaviour
 
    public void CheckPossibilities()
    {
-       Point[] arrayPoints = new Point[target.points.Length];
+       List<Point> arrayPoints = new List<Point>();
 
        for (var i = 0; i < target.points.Length; i++)
        {
            if (target.tipo[i] == Point.Tipo.Alien)
            {
-               return;
+               continue;
            }
-           
-           arrayPoints[i] = target.points[i];
-       }
 
-       if (arrayPoints.Length == 1)
+           arrayPoints.Add(target.points[i]);
+
+       }
+       
+       if (arrayPoints.Count == 1)
        {
+          
            if (arrayPoints[0] == enemy.currentPoint)
            {
                _controller.SetMovementStatus(GameController.Movement.Alien);
@@ -97,3 +100,29 @@ public class Player : MonoBehaviour
        }
    }
 }
+#if UNITY_EDITOR
+[CustomEditor(typeof(Player))]
+public class PlayerEditor : Editor
+{
+    private SerializedProperty _target;
+    private SerializedProperty _speed;
+
+    private void OnEnable()
+    {
+        _target = serializedObject.FindProperty("target");
+        _speed = serializedObject.FindProperty("speed");
+    }
+
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+
+        EditorGUILayout.Slider(_speed, 0.1f, 10f, new GUIContent("Speed do Player"));
+        EditorGUILayout.Space();
+        GUIContent targetLabel = new GUIContent("WayPoint Inicial");
+        EditorGUILayout.PropertyField(_target, targetLabel);
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+#endif

@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] public string nextScene;
     [SerializeField] public int sleepPowerUp;
 
-    public GameObject TelaTutorial;
+    [CanBeNull] public GameObject TelaTutorial;
     public bool Tutorial = true;
 
     void Start()
@@ -53,20 +53,25 @@ public class GameController : MonoBehaviour
         enemy.counter = sleepPowerUp;
     }
 }
-/*
+
 #if UNITY_EDITOR
 [CustomEditor(typeof(GameController), true)]
 public class GameControllerEditor : Editor
 {
     SerializedProperty _powerSleep;
     SerializedProperty _movementStatus;
-    
+    SerializedProperty _tutorial;
+    SerializedProperty _tutorialTela;
+
     void OnEnable()
     {
         // Setup the SerializedProperties.
-        _powerSleep = serializedObject.FindProperty ("sleepPowerUp");
-        _movementStatus = serializedObject.FindProperty ("movementStatus");
+        _powerSleep = serializedObject.FindProperty("sleepPowerUp");
+        _movementStatus = serializedObject.FindProperty("movementStatus");
+        _tutorial = serializedObject.FindProperty("Tutorial");
+        _tutorialTela = serializedObject.FindProperty("TelaTutorial");
     }
+
     public override void OnInspectorGUI()
     {
         var picker = target as GameController;
@@ -74,8 +79,8 @@ public class GameControllerEditor : Editor
 
         serializedObject.Update();
 
-        EditorGUILayout.IntSlider (_powerSleep, 0, 5, new GUIContent ("Counter do enemy(PowerUP)"));
-        
+        EditorGUILayout.IntSlider(_powerSleep, 0, 5, new GUIContent("Counter do enemy(PowerUP)"));
+
         EditorGUI.BeginChangeCheck();
         var newScene = EditorGUILayout.ObjectField("Proxima Cena", oldScene, typeof(SceneAsset), false) as SceneAsset;
 
@@ -85,11 +90,21 @@ public class GameControllerEditor : Editor
             var scenePathProperty = serializedObject.FindProperty("nextScene");
             scenePathProperty.stringValue = newPath;
         }
-        
+
+        EditorGUILayout.PropertyField(_tutorial);
+
+        if (_tutorial.boolValue)
+        {
+            EditorGUI.indentLevel++;
+            EditorGUILayout.PropertyField(_tutorialTela);
+            EditorGUI.indentLevel--;
+        }
+
         EditorGUI.BeginDisabledGroup(true);
         EditorGUILayout.EnumPopup("Status do movimento", (GameController.Movement)_movementStatus.intValue);
         EditorGUI.EndDisabledGroup();
+
         serializedObject.ApplyModifiedProperties();
     }
 }
-#endif*/
+#endif
