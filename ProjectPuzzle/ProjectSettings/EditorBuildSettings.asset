@@ -9,11 +9,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: ba033077fa56e2d4db702153ceb04499
   - enabled: 1
-    path: Assets/Scenes/Fase teste.unity
+    path: Assets/Scenes/tutorial.unity
     guid: c850ee8c3b14cc8459e7e186857cf567
   - enabled: 1
     path: Assets/Scenes/Fase 01.unity
     guid: 2adfb71ea2b7344a39466edb947b3d78
+  - enabled: 1
+    path: Assets/Scenes/Fase 02.unity
+    guid: e3f4c8128dd3e4dac8b05d0e6e483119
+  - enabled: 1
+    path: Assets/Scenes/Fase 03.unity
+    guid: b37a2a107caad44a58001a2d9067fbb0
+  - enabled: 1
+    path: Assets/Scenes/Fase 04.unity
+    guid: 8d471d7c799604f8797fdca860dc8fab
+  - enabled: 1
+    path: Assets/Scenes/Fase 05.unity
+    guid: 8f9eedee2581249ffb61f45af541f88d
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3e0c8573c39c4554c888fb418f303c45,
       type: 2}
