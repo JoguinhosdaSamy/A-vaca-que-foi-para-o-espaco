@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     private GameController _controller;
     public Point target;
     public static Player player;
+    public AudioClip clickSound;
+    private AudioSource audioSource;
     [HideInInspector]
     public Enemy enemy;
     public GameObject[] modelos;
@@ -26,7 +28,7 @@ public class Player : MonoBehaviour
         _controller = GameObject.Find("GameController").GetComponent<GameController>();
         istargetNull = target == null;
         player = this;
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -98,15 +100,25 @@ public class Player : MonoBehaviour
            arrayPoints.Add(target.points[i]);
 
        }
-       
-       if (arrayPoints.Count == 1)
-       {
-          
-           if (arrayPoints[0] == enemy.currentPoint)
-           {
-               _controller.SetMovementStatus(GameController.Movement.Alien);
-           }
-       }
+
+        if (arrayPoints.Count == 1)
+        {
+
+            if (arrayPoints[0] == enemy.currentPoint)
+            {
+                _controller.SetMovementStatus(GameController.Movement.Alien);
+            }
+            Debug.Log("som logou");
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (clickSound = null)
+            {
+              audioSource.PlayOneShot(clickSound);
+            }
+        }
+        
    }
 }
 /*#if UNITY_EDITOR
