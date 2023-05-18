@@ -30,6 +30,7 @@ public class TelaTutorial : MonoBehaviour
             else
             {
                 transform.gameObject.SetActive(false);
+                GameController.controller.Tutorial = false;
             }
 
         }

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
+
 public class GameController : MonoBehaviour
 {
 
@@ -17,9 +18,10 @@ public class GameController : MonoBehaviour
 
     [CanBeNull] public GameObject TelaTutorial;
     public bool Tutorial = true;
-
+    public static GameController controller;
     void Start()
     {
+        controller = this;
         enemy = GameObject.Find("Enemy").GetComponent<Enemy>();
         movementStatus = Movement.Moving;
 

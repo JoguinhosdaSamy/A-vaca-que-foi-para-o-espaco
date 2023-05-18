@@ -73,6 +73,7 @@ public class Point : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (GameController.controller.Tutorial) return;
         if(_controller.movementStatus == GameController.Movement.Vaca){
             Point[] listaPoints = Player.player.target.GetComponent<Point>().points;
             Tipo[] listaTarget = Player.player.target.GetComponent<Point>().tipo;

@@ -8,13 +8,18 @@ using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
+    //tiramos isso que está na linha 12! tirar em todas as variáveis...
     private GameController _controller;
     public Point target;
     public static Player player;
+    [HideInInspector]
     public Enemy enemy;
+    public GameObject[] modelos;
+    [Range (3,10)]
     public float speed = 4.0f;
-    [FormerlySerializedAs("_istargetNull")] [HideInInspector]
+    [FormerlySerializedAs("_istargetNull")][HideInInspector]
     public bool istargetNull;
+    
 
     void Start()
     {
@@ -43,9 +48,13 @@ public class Player : MonoBehaviour
             Vector3 rot = dir.normalized;
             rot.y = transform.position.y;
             transform.rotation = Quaternion.LookRotation(dir.normalized);
-         } else {
+            modelos[0].SetActive(false);
+            modelos[1].SetActive(true);
+        } else {
              istargetNull = true;
-             _controller.SetMovementStatus(GameController.Movement.Alien);
+            modelos[0].SetActive(true);
+            modelos[1].SetActive(false);
+            _controller.SetMovementStatus(GameController.Movement.Alien);
              CheckCondition();
              CheckDie();
          }
@@ -100,12 +109,13 @@ public class Player : MonoBehaviour
        }
    }
 }
-#if UNITY_EDITOR
+/*#if UNITY_EDITOR
 [CustomEditor(typeof(Player))]
 public class PlayerEditor : Editor
 {
     private SerializedProperty _target;
     private SerializedProperty _speed;
+
 
     private void OnEnable()
     {
@@ -125,4 +135,4 @@ public class PlayerEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 }
-#endif
+#endif*/
