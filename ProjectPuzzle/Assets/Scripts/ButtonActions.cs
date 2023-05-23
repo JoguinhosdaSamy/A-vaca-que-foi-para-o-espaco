@@ -12,7 +12,7 @@ public class ButtonActions : MonoBehaviour
 
     public void Play()
     {
-         SceneManager.LoadScene ("tutorial");
+         SceneManager.LoadScene ("00");
     }
 
     private void OnButtonPlayClick()

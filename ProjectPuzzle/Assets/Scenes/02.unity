@@ -2723,7 +2723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementStatus: 0
   enemy: {fileID: 1211573472}
-  nextScene: Assets/Scenes/Fase 03.unity
+  nextScene: Assets/Scenes/03.unity
   sleepPowerUp: 3
   TelaTutorial: {fileID: 1225311084}
   Tutorial: 1

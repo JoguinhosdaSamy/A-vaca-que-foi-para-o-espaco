@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 48753114}
   - component: {fileID: 48753116}
   m_Layer: 5
-  m_Name: Fase3
+  m_Name: Fase2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 316.04, y: -1030.6}
+  m_AnchoredPosition: {x: 400, y: -1323}
   m_SizeDelta: {x: 332.07, y: 423.287}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &48753114
@@ -254,7 +254,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: Fase 03
+          m_StringArgument: Fase 02
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &152098246
@@ -284,7 +284,7 @@ RectTransform:
   m_GameObject: {fileID: 152098246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.91161, y: 0.91161, z: 0.91161}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1042160965}
@@ -292,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33, y: 0}
+  m_AnchoredPosition: {x: -24, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152098248
@@ -328,7 +328,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: Tutorial
 --- !u!222 &152098249
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -452,7 +452,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5
+  m_Text: 4
 --- !u!222 &562039320
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 953029812}
   - component: {fileID: 953029814}
   m_Layer: 5
-  m_Name: Fase2
+  m_Name: Fase1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,7 +582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 715, y: -502}
+  m_AnchoredPosition: {x: 953, y: -647}
   m_SizeDelta: {x: 331.605, y: 459.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &953029812
@@ -648,7 +648,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -667,16 +667,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 403196589}
+      - m_Target: {fileID: 403196588}
         m_TargetAssemblyTypeName: FaseButton, Assembly-CSharp
-        m_MethodName: CarregarCena
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: Fase 02
+          m_StringArgument: 01
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &966781146
@@ -793,7 +793,7 @@ GameObject:
   - component: {fileID: 1042160966}
   - component: {fileID: 1042160968}
   m_Layer: 5
-  m_Name: Fase1
+  m_Name: Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,7 +817,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 316.04, y: -502}
+  m_AnchoredPosition: {x: 408, y: -648}
   m_SizeDelta: {x: 332.07, y: 459.427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1042160966
@@ -911,7 +911,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: Fase 01
+          m_StringArgument: 00
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1127690322
@@ -985,7 +985,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 2
 --- !u!222 &1127690325
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1065,7 +1065,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: 3
 --- !u!222 &1146167160
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1087,7 +1087,7 @@ GameObject:
   - component: {fileID: 1212149970}
   - component: {fileID: 1212149969}
   m_Layer: 5
-  m_Name: Fase5
+  m_Name: Fase4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1146,7 +1146,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
           m_FloatArgument: 0
-          m_StringArgument: Fase 05
+          m_StringArgument: Fase 04
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1212149970
@@ -1205,7 +1205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 715, y: -1569.5247}
+  m_AnchoredPosition: {x: 945, y: -2030}
   m_SizeDelta: {x: 331.6, y: 436.742}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1364735062
@@ -1596,7 +1596,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 1
 --- !u!222 &1987367688
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1618,7 +1618,7 @@ GameObject:
   - component: {fileID: 2034603792}
   - component: {fileID: 2034603794}
   m_Layer: 5
-  m_Name: Fase4
+  m_Name: Fase3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1642,7 +1642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 715, y: -1030.6}
+  m_AnchoredPosition: {x: 953, y: -1331}
   m_SizeDelta: {x: 331.6, y: 423.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2034603792
