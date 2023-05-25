@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,8 +14,9 @@ public class Enemy : MonoBehaviour
     public Point currentPoint;
     public Transform nextPoint;
     private bool _isTargetNull;
-    public float speed = 4.0f;
+    public float speed = 8.0f;
     public int counter;
+    public Image imgWait;
 
     private void Start()
     {
@@ -22,10 +24,13 @@ public class Enemy : MonoBehaviour
         _target = GameObject.Find("Player").GetComponent<Player>();
         _isTargetNull = _target == null;
         nextPoint = currentPoint.transform;
+        imgWait = GetComponentInChildren<Image>();
+        imgWait.fillAmount = counter / 2.0f;
     }
 
     private void FixedUpdate()
     {
+            imgWait.fillAmount = counter / 2.0f;
         if (_controller.movementStatus != GameController.Movement.Alien) return;
         if (_isTargetNull) return;
         if (counter != 0)
