@@ -24,10 +24,10 @@ EditorBuildSettings:
     path: Assets/Scenes/03.unity
     guid: b37a2a107caad44a58001a2d9067fbb0
   - enabled: 1
-    path: Assets/Scenes/Fase 04.unity
+    path: Assets/Scenes/04.unity
     guid: 8d471d7c799604f8797fdca860dc8fab
   - enabled: 1
-    path: Assets/Scenes/Fase 05.unity
+    path: Assets/Scenes/05.unity
     guid: 8f9eedee2581249ffb61f45af541f88d
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3e0c8573c39c4554c888fb418f303c45,
