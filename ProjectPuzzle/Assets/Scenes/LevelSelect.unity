@@ -254,7 +254,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: Fase 02
+          m_StringArgument: 02
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &152098246
@@ -716,9 +716,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 403196588}
+      - m_Target: {fileID: 403196589}
         m_TargetAssemblyTypeName: FaseButton, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: CarregarCena
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1780,6 +1780,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: Fase 03
+          m_StringArgument: 03
           m_BoolArgument: 0
         m_CallState: 2
