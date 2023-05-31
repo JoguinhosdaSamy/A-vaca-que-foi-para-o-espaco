@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using JetBrains.Annotations;
+using Save;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,9 +11,14 @@ using UnityEngine.Serialization;
 
 public class GameController : MonoBehaviour
 {
+    public enum Movement
+    {
+        Moving,
+        Alien,
+        Vaca
+    };
 
-    public enum Movement {Moving, Alien, Vaca};
-    [SerializeField] public Movement movementStatus ;
+    [SerializeField] public Movement movementStatus;
     public Enemy enemy;
     [SerializeField] public string nextScene;
     [SerializeField] public int sleepPowerUp;
@@ -19,15 +26,21 @@ public class GameController : MonoBehaviour
     [CanBeNull] public GameObject TelaTutorial;
     public bool Tutorial = true;
     public static GameController controller;
+
     void Start()
     {
         controller = this;
         enemy = GameObject.Find("Enemy").GetComponent<Enemy>();
         movementStatus = Movement.Moving;
 
+        FaseInfo faseInfo = SaveManager.ReadFaseData(SceneManager.GetActiveScene().name);
         if (Tutorial)
         {
             TelaTutorial.SetActive(true);
+        }
+        if (faseInfo == null)
+        {
+            SaveManager.SaveFaseData(SceneManager.GetActiveScene().name, false, null);
         }
     }
 
@@ -37,19 +50,23 @@ public class GameController : MonoBehaviour
         {
             enemy.FindShortestPath();
         }
+
         movementStatus = tipo;
     }
-    public void Victory()
+
+    public void Victory(int pulos)
     {
+        SaveManager.SaveFaseData(SceneManager.GetActiveScene().name, true, pulos);
+        SaveManager.SaveFaseData(Path.GetFileNameWithoutExtension(nextScene), false, null);
         SceneManager.LoadScene(nextScene);
     }
-    
+
     public void GameOver()
     {
         var scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
-    
+
     public void PowerSleep()
     {
         enemy.counter = sleepPowerUp;

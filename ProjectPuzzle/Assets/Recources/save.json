@@ -1,0 +1,16 @@
+﻿{
+  "fases": {
+    "1": {
+      "concluida": false,
+      "pontosUtilizados": 100
+    },
+    "2": {
+      "concluida": false,
+      "pontosUtilizados": 80
+    },
+    "3": {
+      "concluida": false,
+      "pontosUtilizados": 120
+    }
+  }
+}

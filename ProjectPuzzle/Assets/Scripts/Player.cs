@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     public float speed = 4.0f;
     [FormerlySerializedAs("_istargetNull")][HideInInspector]
     public bool istargetNull;
+
+    private int jumps;
     
 
     void Start()
@@ -57,6 +59,7 @@ public class Player : MonoBehaviour
             modelos[0].SetActive(true);
             modelos[1].SetActive(false);
             _controller.SetMovementStatus(GameController.Movement.Alien);
+            jumps++;
              CheckCondition();
              CheckDie();
          }
@@ -69,7 +72,7 @@ public class Player : MonoBehaviour
         switch (targetTag)
         {
             case Point.Prop.EndPoint:
-                _controller.Victory();
+                _controller.Victory(jumps);
                 break;
             case Point.Prop.SleepPower:
                 _controller.PowerSleep();

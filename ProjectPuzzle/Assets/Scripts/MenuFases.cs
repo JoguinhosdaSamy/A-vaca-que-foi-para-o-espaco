@@ -1,3 +1,4 @@
+using Save;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,14 +7,23 @@ public class MenuFases : MonoBehaviour
 {
     public Button[] faseButtons; 
 
-    private void Update()
+    private void Start()
     {
-        for (int i = 0; i < faseButtons.Length; i++)
+        DisableButtonsForNonCompletedFases();
+    }
+
+    private void DisableButtonsForNonCompletedFases()
+    {
+        foreach (Button button in faseButtons)
         {
-          if(i+3 > PlayerPrefs.GetInt("faseCompletada"))
-          {
-            faseButtons[i].interactable = false;
-          }
+            string nomeFase = button.gameObject.name; 
+
+            FaseInfo faseInfo = SaveManager.ReadFaseData(nomeFase); 
+
+            if (faseInfo == null)
+            {
+                button.interactable = false;
+            }
         }
     }
 
