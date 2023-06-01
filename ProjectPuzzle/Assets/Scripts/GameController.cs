@@ -26,6 +26,8 @@ public class GameController : MonoBehaviour
     [CanBeNull] public GameObject TelaTutorial;
     public bool Tutorial = true;
     public static GameController controller;
+    public GameObject abduzido;
+
 
     void Start()
     {
@@ -63,9 +65,20 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
+        enemy.gameObject.SetActive(false);
+        Player.player.gameObject.SetActive(false);
+        abduzido.transform.position = enemy.transform.position;
+        abduzido.SetActive(true);
+        Invoke("LoadGameOver", 2.0f);
+    }
+
+    void LoadGameOver()
+    {
         var scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+
     }
+
 
     public void PowerSleep()
     {

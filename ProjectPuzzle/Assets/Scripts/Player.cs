@@ -83,9 +83,12 @@ public class Player : MonoBehaviour
     
    private void CheckDie()
     {
-        if (target == enemy.currentPoint)
+        //if (target == enemy.currentPoint)
+        Vector3 dir = GameController.controller.enemy.transform.position - transform.position;
+        if (dir.magnitude < 0.1f) 
         {
             _controller.GameOver();
+            
         }
     }
 

@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
 
     private void CheckDie()
     {
-        if (currentPoint == _target.target)
+        //if (currentPoint == _target.target)
         {
             _controller.GameOver();
         }
