@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private Player _target;
     public Point currentPoint;
     public Transform nextPoint;
+    public GameObject[] models;
     private bool _isTargetNull;
     public float speed = 8.0f;
     public int counter;
@@ -35,6 +36,8 @@ public class Enemy : MonoBehaviour
         if (_isTargetNull) return;
         if (counter != 0)
         {
+            models[0].SetActive(false);
+            models[1].SetActive(true);
             counter--;
             _target.target.ShowLights();
             _controller.SetMovementStatus(GameController.Movement.Vaca);
@@ -42,13 +45,16 @@ public class Enemy : MonoBehaviour
             return;
         }
 
+        models[1].SetActive(false);
+        models[0].SetActive(true);
+
         Vector3 dir = nextPoint.position - transform.position;
         if (dir.magnitude > 0.1f)
         {
             transform.Translate(dir.normalized * (speed * Time.deltaTime), Space.World);
             Vector3 rot = dir.normalized;
             rot.y = transform.position.y;
-            transform.rotation = Quaternion.LookRotation(dir.normalized);
+            //transform.rotation = Quaternion.LookRotation(dir.normalized);
         }
         else
         {
@@ -62,7 +68,6 @@ public class Enemy : MonoBehaviour
 
     private void CheckDie()
     {
-        //if (currentPoint == _target.target)
         {
             _controller.GameOver();
         }
@@ -133,7 +138,7 @@ public class Enemy : MonoBehaviour
     }
 }
 
-#if UNITY_EDITOR
+#if UNITY_LINUX
 
 [CustomEditor(typeof(Enemy))]
 public class EnemyEditor : Editor

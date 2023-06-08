@@ -3492,6 +3492,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPoint: {fileID: 1128494697}
   nextPoint: {fileID: 0}
+  models:
+  - {fileID: 0}
+  - {fileID: 0}
   speed: 4
   counter: 3
   imgWait: {fileID: 0}
