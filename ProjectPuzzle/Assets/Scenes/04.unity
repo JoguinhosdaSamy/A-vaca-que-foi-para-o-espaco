@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,12 +149,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 2134884705}
-  tipo: 00000000
-  linhasPrefab: {fileID: 0}
+  - {fileID: 763821994}
+  - {fileID: 1709370264}
+  tipo: 000000000200000000000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &91725927
 SphereCollider:
@@ -204,12 +207,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.87
+      value: -7.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.19
+      value: 9.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -305,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &103155588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,12 +371,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.4
+      value: -4.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -943,12 +946,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 2139304767}
-  tipo: 00000000
-  linhasPrefab: {fileID: 0}
+  - {fileID: 763821994}
+  tipo: 0000000000000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &317868486
 SphereCollider:
@@ -1083,17 +1088,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.3
+      value: -7.11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.87
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.7
+      value: 22.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -1208,12 +1213,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.6
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.7
+      value: -5.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -2391,12 +2396,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 317868485}
-  tipo: 00000000
-  linhasPrefab: {fileID: 0}
+  - {fileID: 91725926}
+  - {fileID: 1391920673}
+  tipo: 000000000200000000000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &763821995
 SphereCollider:
@@ -2431,7 +2439,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 1198729822}
-  tipo: 00000000
+  - {fileID: 496897557}
+  tipo: 0000000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   property: 0
@@ -2488,17 +2497,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.62
+      value: -8.72
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.87
+      value: -4.76
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.47
+      value: 14.33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -2605,12 +2614,14 @@ MonoBehaviour:
   points:
   - {fileID: 1405292607}
   - {fileID: 1625221522}
-  tipo: 0000000000000000
-  linhasPrefab: {fileID: 0}
+  - {fileID: 1288593573}
+  tipo: 000000000000000001000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &893376386
 SphereCollider:
@@ -2873,17 +2884,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8
+      value: -8.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.87
+      value: -3.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.4
+      value: 35.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -3387,17 +3398,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.1
+      value: -14.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.1
+      value: 21.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -3596,17 +3607,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.73
+      value: -4.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.47
+      value: -1.84
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.76
+      value: -2.47
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -3721,12 +3732,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.87
+      value: -5.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -3832,12 +3843,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 1709370264}
-  tipo: 00000000
-  linhasPrefab: {fileID: 0}
+  - {fileID: 2139304767}
+  tipo: 0000000000000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+  materialApagado: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &1193508720
 SphereCollider:
@@ -3878,12 +3891,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 1288593573}
-  tipo: 00000000
-  linhasPrefab: {fileID: 0}
+  - {fileID: 91725926}
+  - {fileID: 2134884705}
+  - {fileID: 1405292607}
+  tipo: 00000000010000000100000002000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &1198729823
 SphereCollider:
@@ -4012,7 +4029,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211573471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 3.31, z: 25.4}
+  m_LocalPosition: {x: -6.58, y: 3.22, z: 25.46}
   m_LocalScale: {x: 1, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8836,12 +8853,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2
+      value: -3.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.5
+      value: -15.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -9291,8 +9308,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abd42234711e4243bd32224c439e01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: []
-  tipo: 
+  points:
+  - {fileID: 1625221522}
+  - {fileID: 893376385}
+  tipo: 0100000001000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   property: 0
@@ -9410,12 +9429,14 @@ MonoBehaviour:
   points:
   - {fileID: 2027635451}
   - {fileID: 763821994}
-  tipo: 0000000000000000
-  linhasPrefab: {fileID: 0}
+  - {fileID: 1405292607}
+  tipo: 000000000000000001000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &1391920674
 SphereCollider:
@@ -9454,13 +9475,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abd42234711e4243bd32224c439e01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: []
-  tipo: 
-  linhasPrefab: {fileID: 0}
+  points:
+  - {fileID: 91725926}
+  - {fileID: 2027635451}
+  - {fileID: 1198729822}
+  - {fileID: 893376385}
+  tipo: 01000000000000000200000000000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &1405292608
 SphereCollider:
@@ -9511,7 +9537,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.4
+      value: -10.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -9521,7 +9547,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12
+      value: 12.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -9631,17 +9657,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.2
+      value: -11.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.87
+      value: -2.91
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33.4
+      value: 31.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -9751,17 +9777,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.4
+      value: -10.38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.71
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.99
+      value: 10.63
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -9867,12 +9893,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 2040598231}
-  tipo: 00000000
-  linhasPrefab: {fileID: 0}
+  - {fileID: 1288593573}
+  - {fileID: 893376385}
+  tipo: 000000000100000000000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &1625221523
 SphereCollider:
@@ -10055,12 +10084,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 91725926}
-  tipo: 00000000
-  linhasPrefab: {fileID: 0}
+  - {fileID: 317868485}
+  - {fileID: 2139304767}
+  - {fileID: 1193508719}
+  tipo: 00000000010000000100000000000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &1709370265
 SphereCollider:
@@ -10203,12 +10236,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.7
+      value: -7.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.4
+      value: -5.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -10491,11 +10524,12 @@ MonoBehaviour:
   points:
   - {fileID: 1288593573}
   tipo: 00000000
-  linhasPrefab: {fileID: 0}
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &2040598232
 SphereCollider:
@@ -10997,12 +11031,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 496897557}
-  tipo: 00000000
-  linhasPrefab: {fileID: 0}
+  - {fileID: 780474591}
+  - {fileID: 91725926}
+  tipo: 000000000100000000000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &2134884706
 SphereCollider:
@@ -11043,12 +11080,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 1193508719}
-  tipo: 00000000
-  linhasPrefab: {fileID: 0}
+  - {fileID: 1709370264}
+  - {fileID: 317868485}
+  tipo: 000000000100000000000000
+  linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
+    type: 3}
   property: 0
   prev: {fileID: 0}
-  materialAceso: {fileID: 0}
-  materialApagado: {fileID: 0}
+  materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
+  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &2139304768
 SphereCollider:
