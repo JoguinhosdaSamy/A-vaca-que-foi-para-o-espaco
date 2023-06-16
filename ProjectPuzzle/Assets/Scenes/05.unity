@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -147,8 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abd42234711e4243bd32224c439e01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: []
-  tipo: 
+  points:
+  - {fileID: 2139304767}
+  - {fileID: 496897557}
+  tipo: 0000000002000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   property: 0
@@ -313,7 +315,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103155587}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
@@ -740,7 +742,8 @@ MonoBehaviour:
   points:
   - {fileID: 1288593573}
   - {fileID: 780474591}
-  tipo: 0000000001000000
+  - {fileID: 1895972596}
+  tipo: 000000000100000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   property: 0
@@ -1947,7 +1950,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 317868485}
-  tipo: 01000000
+  - {fileID: 1709370264}
+  - {fileID: 496897557}
+  tipo: 010000000100000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   property: 0
@@ -3511,14 +3516,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abd42234711e4243bd32224c439e01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: []
-  tipo: 
+  points:
+  - {fileID: 2027635451}
+  tipo: 00000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   property: 0
   prev: {fileID: 0}
   materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
-  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+  materialApagado: {fileID: 2100000, guid: 9bd1a57ce6a2743458c981612ce92a4a, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &1193508720
 SphereCollider:
@@ -3695,7 +3701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211573471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.68, y: 0, z: 21.08}
+  m_LocalPosition: {x: -8.6, y: 4.7, z: 21.08}
   m_LocalScale: {x: 1, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10854,14 +10860,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abd42234711e4243bd32224c439e01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: []
-  tipo: 
+  points:
+  - {fileID: 1895972596}
+  - {fileID: 763821994}
+  tipo: 0000000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   property: 0
   prev: {fileID: 0}
   materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
-  materialApagado: {fileID: 2100000, guid: d78daba4c50dbe44cbb736e39506d6a5, type: 2}
+  materialApagado: {fileID: 2100000, guid: 9bd1a57ce6a2743458c981612ce92a4a, type: 2}
   _meshRenderer: {fileID: 0}
 --- !u!135 &2040598232
 SphereCollider:
@@ -10961,7 +10969,8 @@ MonoBehaviour:
   - {fileID: 1625221522}
   - {fileID: 1288593573}
   - {fileID: 763821994}
-  tipo: 0000000000000000020000000200000001000000
+  - {fileID: 2134884705}
+  tipo: 000000000000000002000000020000000100000001000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
   property: 0
