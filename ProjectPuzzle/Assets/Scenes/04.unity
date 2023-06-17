@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -310,7 +310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &103155588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3518,7 +3518,7 @@ MonoBehaviour:
   tipo: 0000000000000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  property: 0
+  property: 2
   prev: {fileID: 0}
   materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: 9bd1a57ce6a2743458c981612ce92a4a, type: 2}
@@ -3626,6 +3626,7 @@ MonoBehaviour:
   models:
   - {fileID: 304723329}
   - {fileID: 2110454989}
+  isTargetNull: 0
   speed: 4
   counter: 3
   imgWait: {fileID: 0}
@@ -8530,7 +8531,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.8
+      value: -18.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08ffbc0904356478da1d91963444b656,
         type: 3}
@@ -10156,7 +10157,7 @@ MonoBehaviour:
   tipo: 00000000
   linhasPrefab: {fileID: 830263825980935197, guid: 922fef3b45d3782ea80bf6283946d79a,
     type: 3}
-  property: 0
+  property: 2
   prev: {fileID: 0}
   materialAceso: {fileID: 2100000, guid: 0454eebfa3a874a27be98f6778dca698, type: 2}
   materialApagado: {fileID: 2100000, guid: 9bd1a57ce6a2743458c981612ce92a4a, type: 2}
@@ -10415,7 +10416,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &2054903528
 Transform:
   m_ObjectHideFlags: 0

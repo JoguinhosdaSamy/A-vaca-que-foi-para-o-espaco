@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
 
@@ -14,7 +15,7 @@ public class Enemy : MonoBehaviour
     public Point currentPoint;
     public Transform nextPoint;
     public GameObject[] models;
-    private bool _isTargetNull;
+    [FormerlySerializedAs("_isTargetNull")] public bool isTargetNull;
     public float speed = 8.0f;
     public int counter;
     public Image imgWait;
@@ -23,7 +24,7 @@ public class Enemy : MonoBehaviour
     {
         _controller = GameObject.Find("GameController").GetComponent<GameController>();
         _target = GameObject.Find("Player").GetComponent<Player>();
-        _isTargetNull = _target == null;
+        isTargetNull = _target == null;
         nextPoint = currentPoint.transform;
         imgWait = GetComponentInChildren<Image>();
         imgWait.fillAmount = counter / 2.0f;
@@ -33,7 +34,7 @@ public class Enemy : MonoBehaviour
     {
             imgWait.fillAmount = counter / 2.0f;
         if (_controller.movementStatus != GameController.Movement.Alien) return;
-        if (_isTargetNull) return;
+        if (isTargetNull) return;
         if (counter != 0)
         {
             models[0].SetActive(false);
@@ -58,7 +59,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            _isTargetNull = true;
+            isTargetNull = true;
             _target.target.ShowLights();
             _controller.SetMovementStatus(GameController.Movement.Vaca);
             _target.CheckPossibilities();
@@ -108,7 +109,7 @@ public class Enemy : MonoBehaviour
                     path.Reverse();
                     nextPoint = path[0].transform;
                     currentPoint = path[0];
-                    _isTargetNull = false;
+                    isTargetNull = false;
                     return;
                 }
 
@@ -133,7 +134,7 @@ public class Enemy : MonoBehaviour
                 }
             }
 
-            _isTargetNull = false;
+            isTargetNull = false;
         }
     }
 }

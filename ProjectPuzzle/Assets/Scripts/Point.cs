@@ -137,6 +137,7 @@ public class PointEditor : Editor
 {
     private SerializedProperty _points;
     private SerializedProperty _tipo;
+    private SerializedProperty _prop;
     private SerializedProperty _materialAcesoProperty;
     private SerializedProperty _materialApagadoProperty;
     private SerializedProperty _linhasPrefab;
@@ -146,6 +147,7 @@ public class PointEditor : Editor
     {
         _points = serializedObject.FindProperty("points");
         _tipo = serializedObject.FindProperty("tipo");
+        _prop = serializedObject.FindProperty("property");
         _materialAcesoProperty = serializedObject.FindProperty("materialAceso");
         _materialApagadoProperty = serializedObject.FindProperty("materialApagado");
         _linhasPrefab = serializedObject.FindProperty("linhasPrefab");
@@ -154,6 +156,12 @@ public class PointEditor : Editor
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
+
+        EditorGUILayout.LabelField("Propriedade", EditorStyles.boldLabel);
+        EditorGUILayout.PropertyField(_prop, GUIContent.none);
+
+        GUILayout.Space(10);
+        EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
         DrawPointsArray();
 

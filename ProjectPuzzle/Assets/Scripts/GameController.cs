@@ -82,6 +82,7 @@ public class GameController : MonoBehaviour
 
     public void PowerSleep()
     {
+        enemy.isTargetNull = false;
         enemy.counter = sleepPowerUp;
     }
 }

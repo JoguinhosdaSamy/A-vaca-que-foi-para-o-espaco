@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     public static Player player;
     public AudioClip clickSound;
     private AudioSource audioSource;
-    [HideInInspector]
     public Enemy enemy;
     public GameObject[] modelos;
     [Range (3,10)]
@@ -58,10 +57,10 @@ public class Player : MonoBehaviour
              istargetNull = true;
             modelos[0].SetActive(true);
             modelos[1].SetActive(false);
+            CheckCondition();
             _controller.SetMovementStatus(GameController.Movement.Alien);
             jumps++;
-             CheckCondition();
-             CheckDie();
+            CheckDie();
          }
      }
     private void CheckCondition()

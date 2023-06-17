@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.31}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1136.57, y: -692.52}
-  m_SizeDelta: {x: 141, y: 225}
+  m_AnchoredPosition: {x: 853.2728, y: -469.46704}
+  m_SizeDelta: {x: 103.017, y: 164.389}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &48753114
 MonoBehaviour:
@@ -343,8 +343,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10.716}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1162, y: -1547}
-  m_SizeDelta: {x: 139, y: 252}
+  m_AnchoredPosition: {x: 871.8525, y: -1093.7677}
+  m_SizeDelta: {x: 101.556, y: 184.116}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341262906
 MonoBehaviour:
@@ -561,7 +561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738232346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -77.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -604,8 +604,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 797, y: -569.02}
-  m_SizeDelta: {x: 331.605, y: 459.42}
+  m_AnchoredPosition: {x: 605.176, y: -379.235}
+  m_SizeDelta: {x: 242.278, y: 335.662}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &953029812
 MonoBehaviour:
@@ -935,8 +935,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 287, y: -498}
-  m_SizeDelta: {x: 156, y: 133}
+  m_AnchoredPosition: {x: 232.55902, y: -327.347}
+  m_SizeDelta: {x: 113.977, y: 97.172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1042160967
 CanvasRenderer:
@@ -1045,7 +1045,7 @@ GameObject:
   - component: {fileID: 1051506416}
   - component: {fileID: 1051506415}
   m_Layer: 5
-  m_Name: 05 (1)
+  m_Name: voltar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1339,8 +1339,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 690, y: -1535}
-  m_SizeDelta: {x: 139, y: 252}
+  m_AnchoredPosition: {x: 527, y: -1085}
+  m_SizeDelta: {x: 101.556, y: 184.116}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1364735062
 GameObject:
@@ -1648,8 +1648,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.186}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 359, y: -1221}
-  m_SizeDelta: {x: 203, y: 260}
+  m_AnchoredPosition: {x: 285.16406, y: -855.5852}
+  m_SizeDelta: {x: 148.316, y: 189.961}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2034603792
 MonoBehaviour:

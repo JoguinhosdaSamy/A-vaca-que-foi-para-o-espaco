@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1009,7 +1009,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &300732568
 Transform:
   m_ObjectHideFlags: 0
@@ -1451,7 +1450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2027635451}
   clickSound: {fileID: 8300000, guid: c7af0934ed667459ebc0fc1fefb6b8af, type: 3}
-  enemy: {fileID: 0}
+  enemy: {fileID: 1211573472}
   modelos:
   - {fileID: 1861050548}
   - {fileID: 925816275}
@@ -1527,8 +1526,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518328243}
-  m_LocalRotation: {x: -0.1642389, y: 0.16860409, z: 0.028504083, w: 0.97148645}
-  m_LocalPosition: {x: -3.26, y: 2.89, z: -21.17}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.45, y: 0.53, z: -24.5}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1536,7 +1535,7 @@ Transform:
   - {fileID: 925816280}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -19.191, y: 19.692, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522557756 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 08ffbc0904356478da1d91963444b656,
