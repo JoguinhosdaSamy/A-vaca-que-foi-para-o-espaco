@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2947,6 +2947,7 @@ MonoBehaviour:
   enemy: {fileID: 1211573472}
   nextScene: Assets/Scenes/05.unity
   sleepPowerUp: 3
+  indexTrack: 5
   TelaTutorial: {fileID: 1225311084}
   Tutorial: 0
   abduzido: {fileID: 2054903525}
@@ -10036,13 +10037,16 @@ MonoBehaviour:
   trackSoundSource: {fileID: 1385008024}
   musicTracks:
   - {fileID: 8300000, guid: 801d35f470c544e90953da6f21f6f913, type: 3}
-  - {fileID: 8300000, guid: 6820db2b753f74683bbea50ca06900a5, type: 3}
   - {fileID: 8300000, guid: bc26ec0f35ad7422391722cd74ce6910, type: 3}
+  - {fileID: 8300000, guid: 29f8ef084701444f799a0595e9d1a06c, type: 3}
   - {fileID: 8300000, guid: 66c9f86c441a4486b8055421098123ad, type: 3}
   - {fileID: 8300000, guid: a4329e3564c1b4eabae8be27e6b02a88, type: 3}
+  - {fileID: 8300000, guid: 31f17e345ad644fdabed73c7d22d476f, type: 3}
+  - {fileID: 8300000, guid: 0691178f60f2f4aed8ca11b6318cae38, type: 3}
   soundtrackVolume: 0
   soundEffectVolume: 0
   pauseManager: {fileID: 1242725585}
+  CurrentTrackIndex: 0
 --- !u!4 &1856796732
 Transform:
   m_ObjectHideFlags: 0
