@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
         movementStatus = Movement.Moving;
 
         if(indexTrack != -1){
+            _audioManager.StopMusic();
             _audioManager.PlayMusicTrack(indexTrack);
             _audioManager.CurrentTrackIndex = indexTrack;
         }
