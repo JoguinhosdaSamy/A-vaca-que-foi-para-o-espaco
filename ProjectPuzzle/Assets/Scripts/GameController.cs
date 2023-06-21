@@ -23,12 +23,14 @@ public class GameController : MonoBehaviour
     public Enemy enemy;
     [SerializeField] public string nextScene;
     [SerializeField] public int sleepPowerUp;
+    [SerializeField] public int indexTrack = -1;
 
     [CanBeNull] public GameObject TelaTutorial;
     public bool Tutorial = true;
     public static GameController controller;
     public GameObject abduzido;
     private AudioManager _audioManager;
+    
 
 
 
@@ -39,6 +41,9 @@ public class GameController : MonoBehaviour
         _audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         movementStatus = Movement.Moving;
 
+        if(indexTrack != -1){
+            _audioManager.PlayMusicTrack(indexTrack);
+        }
         FaseInfo faseInfo = SaveManager.ReadFaseData(SceneManager.GetActiveScene().name);
         if (Tutorial)
         {
@@ -106,6 +111,7 @@ public class GameControllerEditor : Editor
     SerializedProperty _movementStatus;
     SerializedProperty _tutorial;
     SerializedProperty _tutorialTela;
+    SerializedProperty _indexTrack;
 
     void OnEnable()
     {
@@ -114,6 +120,7 @@ public class GameControllerEditor : Editor
         _movementStatus = serializedObject.FindProperty("movementStatus");
         _tutorial = serializedObject.FindProperty("Tutorial");
         _tutorialTela = serializedObject.FindProperty("TelaTutorial");
+        _indexTrack = serializedObject.FindProperty("indexTrack");
     }
 
     public override void OnInspectorGUI()
@@ -147,6 +154,8 @@ public class GameControllerEditor : Editor
         EditorGUI.BeginDisabledGroup(true);
         EditorGUILayout.EnumPopup("Status do movimento", (GameController.Movement)_movementStatus.intValue);
         EditorGUI.EndDisabledGroup();
+
+        EditorGUILayout.PropertyField(_indexTrack);
 
         serializedObject.ApplyModifiedProperties();
     }
