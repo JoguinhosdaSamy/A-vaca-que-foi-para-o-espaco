@@ -911,6 +911,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas Pause Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 1509410156133341809, guid: df2dfe090c8bd6545a6ea3ef5693b77c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1509410156452689783, guid: df2dfe090c8bd6545a6ea3ef5693b77c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1808,12 +1813,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1715f82b033ce2445b947ac1ed8ee6ad, type: 3}
-    m_FontSize: 120
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
