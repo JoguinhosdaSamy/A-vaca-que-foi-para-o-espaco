@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Audio;
 using JetBrains.Annotations;
 using Save;
 using UnityEditor;
@@ -27,12 +28,15 @@ public class GameController : MonoBehaviour
     public bool Tutorial = true;
     public static GameController controller;
     public GameObject abduzido;
+    private AudioManager _audioManager;
+
 
 
     void Start()
     {
         controller = this;
         enemy = GameObject.Find("Enemy").GetComponent<Enemy>();
+        _audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         movementStatus = Movement.Moving;
 
         FaseInfo faseInfo = SaveManager.ReadFaseData(SceneManager.GetActiveScene().name);
@@ -40,6 +44,7 @@ public class GameController : MonoBehaviour
         {
             TelaTutorial.SetActive(true);
         }
+
         if (faseInfo == null)
         {
             SaveManager.SaveFaseData(SceneManager.GetActiveScene().name, false, null);
@@ -85,6 +90,12 @@ public class GameController : MonoBehaviour
         enemy.isTargetNull = false;
         enemy.counter = sleepPowerUp;
     }
+
+    public void PlayEffect(AudioClip audio)
+    {
+        _audioManager.PlaySoundEffect(audio);
+    }
+
 }
 
 #if UNITY_EDITOR

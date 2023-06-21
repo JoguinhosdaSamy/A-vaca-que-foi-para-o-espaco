@@ -4,4 +4,6 @@
 public class FaseData
 {
     public Dictionary<string, FaseInfo> fases;
+    public float soundTrackVolume;
+    public float soundEffectsVolume;
 }

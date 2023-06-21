@@ -22,10 +22,12 @@ public class Player : MonoBehaviour
     public bool istargetNull;
 
     private int jumps;
-    
+    private bool _isclickSoundNotNull;
+
 
     void Start()
     {
+        _isclickSoundNotNull = clickSound != null;
         _controller = GameObject.Find("GameController").GetComponent<GameController>();
         istargetNull = target == null;
         player = this;
@@ -75,6 +77,7 @@ public class Player : MonoBehaviour
                 break;
             case Point.Prop.SleepPower:
                 _controller.PowerSleep();
+                target.ShowEffect();
                 break;
         }
         
@@ -118,9 +121,9 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (clickSound = null)
+            if (_isclickSoundNotNull)
             {
-              audioSource.PlayOneShot(clickSound);
+              audioSource.Play();
             }
         }
         

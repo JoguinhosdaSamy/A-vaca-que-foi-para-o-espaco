@@ -5,8 +5,20 @@ using UnityEngine.Serialization;
 
 public class Point : MonoBehaviour
 {
-    public enum Tipo {Neutro, Alien, Vaca};
-    public enum Prop {None, EndPoint, SleepPower};
+    public enum Tipo
+    {
+        Neutro,
+        Alien,
+        Vaca
+    };
+
+    public enum Prop
+    {
+        None,
+        EndPoint,
+        SleepPower
+    };
+
     public Point[] points;
     public Tipo[] tipo;
     private List<GameObject> _lines = new List<GameObject>();
@@ -19,7 +31,10 @@ public class Point : MonoBehaviour
 
     public Material materialAceso;
     public Material materialApagado;
-    [HideInInspector]public MeshRenderer _meshRenderer;
+    
+    public GameObject PowerupEffect;
+    public AudioClip PowerupSound;
+    [HideInInspector] public MeshRenderer _meshRenderer;
 
     private void OnDrawGizmos()
     {
@@ -34,22 +49,23 @@ public class Point : MonoBehaviour
                 case Tipo.Vaca:
                     Gizmos.color = _yellowLine;
                     break;
-                    
+
             }
+
             Gizmos.DrawLine(transform.position, points[i].transform.position);
         }
     }
-    
+
     void Start()
     {
         _controller = GameObject.Find("GameController").GetComponent<GameController>();
         _meshRenderer = GetComponent<MeshRenderer>();
-        
+
         for (var i = 0; i < points.Length; i++)
         {
             var transform1 = transform;
             var position = transform1.position;
-            
+
             GameObject linha = Instantiate(linhasPrefab, position, Quaternion.identity, transform1);
             LineRenderer lineRenderer = linha.GetComponent<LineRenderer>();
             switch (tipo[i])
@@ -60,25 +76,28 @@ public class Point : MonoBehaviour
                 case Tipo.Vaca:
                     lineRenderer.SetColors(_yellowLine, _yellowLine);
                     break;
-                    
+
             }
 
             _lines.Add(linha);
             lineRenderer.SetPosition(0, position);
             lineRenderer.SetPosition(1, points[i].transform.position);
         }
-        
+
     }
 
 
     void OnMouseDown()
     {
         if (GameController.controller.Tutorial) return;
-        if(_controller.movementStatus == GameController.Movement.Vaca){
+        if (_controller.movementStatus == GameController.Movement.Vaca)
+        {
             Point[] listaPoints = Player.player.target.GetComponent<Point>().points;
             Tipo[] listaTarget = Player.player.target.GetComponent<Point>().tipo;
-            for (var i = 0; i < listaPoints.Length; i++){
-                if (listaPoints[i].transform == transform){
+            for (var i = 0; i < listaPoints.Length; i++)
+            {
+                if (listaPoints[i].transform == transform)
+                {
                     if (listaTarget[i] == Tipo.Alien)
                     {
                         return;
@@ -92,7 +111,7 @@ public class Point : MonoBehaviour
             }
         }
     }
-    
+
     public void UpdateConnectedPoints()
     {
         for (int i = 0; i < points.Length; i++)
@@ -109,7 +128,7 @@ public class Point : MonoBehaviour
     {
         for (var i = 0; i < points.Length; i++)
         {
-            
+
             if (tipo[i] == Tipo.Alien)
             {
                 return;
@@ -128,6 +147,13 @@ public class Point : MonoBehaviour
             point._meshRenderer.material = point.materialApagado;
         }
     }
+
+    public void ShowEffect()
+    {
+        Instantiate(PowerupEffect, transform.position, transform.rotation);
+        _controller.PlayEffect(PowerupSound);
+    }
+
 }
 
 #if UNITY_EDITOR
@@ -141,6 +167,8 @@ public class PointEditor : Editor
     private SerializedProperty _materialAcesoProperty;
     private SerializedProperty _materialApagadoProperty;
     private SerializedProperty _linhasPrefab;
+    private SerializedProperty _powerEffect;
+    private SerializedProperty _powerSound;
     private const float PreviewAspectRatio = 1f;
 
     private void OnEnable()
@@ -151,6 +179,8 @@ public class PointEditor : Editor
         _materialAcesoProperty = serializedObject.FindProperty("materialAceso");
         _materialApagadoProperty = serializedObject.FindProperty("materialApagado");
         _linhasPrefab = serializedObject.FindProperty("linhasPrefab");
+        _powerEffect = serializedObject.FindProperty("PowerupEffect");
+        _powerSound = serializedObject.FindProperty("PowerupSound");
     }
 
     public override void OnInspectorGUI()
@@ -175,6 +205,19 @@ public class PointEditor : Editor
         EditorGUILayout.LabelField("Linhas", EditorStyles.boldLabel);
         
         EditorGUILayout.PropertyField(_linhasPrefab,GUIContent.none);
+        
+        
+        EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+        
+        EditorGUILayout.LabelField("Especiais PowerUPs", EditorStyles.boldLabel);
+
+        EditorGUILayout.LabelField("Efeito PowerUP(so coloque caso seja prop PowerUp)");
+        
+        EditorGUILayout.PropertyField(_powerEffect,GUIContent.none);
+        
+        EditorGUILayout.LabelField("Audio do PowerUp");
+        
+        EditorGUILayout.PropertyField(_powerSound,GUIContent.none);
         
         serializedObject.ApplyModifiedProperties();
     }

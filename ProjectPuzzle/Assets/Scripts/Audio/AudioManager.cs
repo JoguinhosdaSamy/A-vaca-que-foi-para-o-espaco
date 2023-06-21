@@ -1,145 +1,163 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-
-using UnityEditor;  
+using UnityEditor;
 using System.Collections.Generic;
+using Config;
+using Save;
+using UnityEngine.Audio;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Audio
 {
     public class AudioManager : MonoBehaviour
     {
+        public AudioMixer audioMixer;
         public AudioSource soundEffectSource; // AudioSource para efeitos sonoros
+        public AudioSource trackSoundSource; // AudioSource para efeitos sonoros
         public List<AudioClip> musicTracks; // Lista de faixas da trilha sonora
         public float soundtrackVolume = 1.0f; // Volume da trilha sonora
+        public float soundEffectVolume = 1.0f; // Volume da trilha sonora
 
-    private int currentTrackIndex = 0; // Índice da faixa atual
+        public PauseManager pauseManager;
 
-    public static AudioManager instance; // Referência estática para acesso global
+        private int _currentTrackIndex = 0; // Índice da faixa atual
+        
+        private SaveManager _saveManager;
 
-    public float SoundtrackVolume
-    {
-        get { return soundtrackVolume; }
-        set
+        public static AudioManager Instance; // Referência estática para acesso global
+
+        public float SoundtrackVolume
         {
-            soundtrackVolume = value;
-            ApplyVolumeToMusicTracks();
-        }
-    }
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void Start()
-    {
-        // Inicia a reprodução da primeira faixa da trilha sonora
-        PlayMusicTrack(currentTrackIndex);
-    }
-
-    // Método para reproduzir um efeito sonoro
-    public void PlaySoundEffect(AudioClip clip)
-    {
-        soundEffectSource.clip = clip;
-        soundEffectSource.Play();
-    }
-    
-    // Método para reproduzir a próxima faixa da trilha sonora
-    private void PlayNextTrack()
-    {
-        currentTrackIndex++;
-        if (currentTrackIndex >= musicTracks.Count)
-        {
-            currentTrackIndex = 0; // Volta para a primeira faixa quando chegar ao fim da lista
-        }
-
-        PlayMusicTrack(currentTrackIndex);
-    }
-
-// Método para reproduzir uma faixa específica da trilha sonora
-    public void PlayMusicTrack(int trackIndex)
-    {
-        if (trackIndex < 0 || trackIndex >= musicTracks.Count)
-        {
-            Debug.LogError("Índice de faixa inválido: " + trackIndex);
-            return;
-        }
-
-        currentTrackIndex = trackIndex;
-        AudioClip track = musicTracks[currentTrackIndex];
-        soundEffectSource.clip = track;
-        ApplyVolumeToMusicTracks(); // Aplica o volume da trilha sonora
-        soundEffectSource.Play();
-
-        // Chama o método PlayNextTrack() quando a faixa atual terminar de tocar
-        StartCoroutine(WaitForTrackToEnd(track.length));
-    }
-
-        // Aguarda o tempo especificado antes de chamar o método PlayNextTrack()
-        private IEnumerator WaitForTrackToEnd(float trackLength)
-    {
-        yield return new WaitForSeconds(trackLength);
-        PlayNextTrack();
-    }
-
-
-
-    // Método para parar a trilha sonora
-    public void StopMusic()
-    {
-        soundEffectSource.Stop();
-    }
-
-    // Aplica o volume da trilha sonora às faixas de música
-    private void ApplyVolumeToMusicTracks()
-    {
-        foreach (var track in musicTracks)
-        {
-            track.LoadAudioData();
-            float[] data = new float[track.samples];
-            track.GetData(data, 0);
-
-            for (int i = 0; i < data.Length; i++)
+            get { return soundtrackVolume; }
+            set
             {
-                data[i] *= soundtrackVolume;
+                soundtrackVolume = value;
+                ApplySounds();
+            }
+        } 
+        
+        public float SoundEffectVolume
+        {
+            get { return soundEffectVolume; }
+            set
+            {
+                soundEffectVolume = value;
+                ApplySounds();
+                
+            }
+        }
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        private void Start()
+        {
+            _saveManager = GameObject.Find("SaveManager").GetComponent<SaveManager>();
+            PlayMusicTrack(_currentTrackIndex);
+        }
+
+        public void PlaySoundEffect(AudioClip clip)
+        {
+            soundEffectSource.clip = clip;
+            soundEffectSource.Play();
+        }
+
+        private void PlayNextTrack()
+        {
+            _currentTrackIndex++;
+            if (_currentTrackIndex >= musicTracks.Count)
+            {
+                _currentTrackIndex = 0;
             }
 
-            track.SetData(data, 0);
+            PlayMusicTrack(_currentTrackIndex);
         }
+
+        public void PlayMusicTrack(int trackIndex)
+        {
+            if (trackIndex < 0 || trackIndex >= musicTracks.Count)
+            {
+                Debug.LogError("Índice de faixa inválido: " + trackIndex);
+                return;
+            }
+
+            _currentTrackIndex = trackIndex;
+            AudioClip track = musicTracks[_currentTrackIndex];
+            trackSoundSource.clip = track;
+            ApplySounds(); // Aplica o volume da trilha sonora
+            trackSoundSource.Play();
+
+            // Chama o método PlayNextTrack() quando a faixa atual terminar de tocar
+            StartCoroutine(WaitForTrackToEnd(track.length));
+        }
+
+        private IEnumerator WaitForTrackToEnd(float trackLength)
+        {
+            yield return new WaitForSeconds(trackLength);
+            PlayNextTrack();
+        }
+
+
+        // Método para parar a trilha sonora
+        public void StopMusic()
+        {
+            trackSoundSource.Stop();
+        }
+
+        private void ApplySounds()
+        {
+            audioMixer.SetFloat("Music", soundtrackVolume);
+            audioMixer.SetFloat("Effects", soundEffectVolume);
+            pauseManager.soundtrackSlider.value = soundtrackVolume;
+            pauseManager.soundEffectSlider.value = soundEffectVolume;
+        }
+        
     }
 
-}
-
 #if UNITY_EDITOR
-
     [CustomEditor(typeof(AudioManager))]
 public class AudioManagerEditor : Editor
 {
     SerializedProperty soundEffectSourceProp;
+    SerializedProperty trackSourceProp;
     SerializedProperty musicTracksProp;
+    SerializedProperty soundeffectVolumeProp;
     SerializedProperty soundtrackVolumeProp;
+    SerializedProperty soundMixerProp;
     bool musicTracksFoldout = true;
 
     private void OnEnable()
     {
         soundEffectSourceProp = serializedObject.FindProperty("soundEffectSource");
+        trackSourceProp = serializedObject.FindProperty("trackSoundSource");
         musicTracksProp = serializedObject.FindProperty("musicTracks");
         soundtrackVolumeProp = serializedObject.FindProperty("soundtrackVolume");
+        soundeffectVolumeProp = serializedObject.FindProperty("soundEffectVolume");
+        soundMixerProp = serializedObject.FindProperty("audioMixer");
     }
 
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
-
-        EditorGUILayout.PropertyField(soundEffectSourceProp);
+        GUILayout.Space(10);
+        EditorGUILayout.PropertyField(soundMixerProp, new GUIContent("Mixer"));
+        GUILayout.Space(10);
+        EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+        GUILayout.Space(10);
+        EditorGUILayout.PropertyField(trackSourceProp, new GUIContent("Source da Trilha Sonora"));
+        EditorGUILayout.PropertyField(soundEffectSourceProp, new GUIContent("Source de Efeitos Sonoros"));
 
         GUILayout.Space(10);
         EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
@@ -150,10 +168,6 @@ public class AudioManagerEditor : Editor
             DrawMusicTracksArray();
         }
         EditorGUILayout.EndFoldoutHeaderGroup();
-
-        GUILayout.Space(10);
-        EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-        EditorGUILayout.Slider(soundtrackVolumeProp, 0f, 1f, new GUIContent("Soundtrack Volume"));
 
         serializedObject.ApplyModifiedProperties();
     }
@@ -231,4 +245,3 @@ public class AudioManagerEditor : Editor
 }
 #endif
 }
-
