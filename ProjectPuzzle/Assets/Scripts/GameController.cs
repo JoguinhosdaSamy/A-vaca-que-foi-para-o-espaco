@@ -43,6 +43,7 @@ public class GameController : MonoBehaviour
 
         if(indexTrack != -1){
             _audioManager.PlayMusicTrack(indexTrack);
+            _audioManager.CurrentTrackIndex = indexTrack;
         }
         FaseInfo faseInfo = SaveManager.ReadFaseData(SceneManager.GetActiveScene().name);
         if (Tutorial)
