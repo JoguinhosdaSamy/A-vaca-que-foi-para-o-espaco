@@ -22,7 +22,7 @@ namespace Audio
 
         public PauseManager pauseManager;
 
-        private int _currentTrackIndex = 0; // Índice da faixa atual
+        public int CurrentTrackIndex = 0; // Índice da faixa atual
         
         private SaveManager _saveManager;
 
@@ -65,7 +65,7 @@ namespace Audio
         private void Start()
         {
             _saveManager = GameObject.Find("SaveManager").GetComponent<SaveManager>();
-            PlayMusicTrack(_currentTrackIndex);
+            PlayMusicTrack(CurrentTrackIndex);
         }
 
         public void PlaySoundEffect(AudioClip clip)
@@ -76,13 +76,13 @@ namespace Audio
 
         private void PlayNextTrack()
         {
-            _currentTrackIndex++;
-            if (_currentTrackIndex >= musicTracks.Count)
+            CurrentTrackIndex++;
+            if (CurrentTrackIndex >= musicTracks.Count)
             {
-                _currentTrackIndex = 0;
+                CurrentTrackIndex = 0;
             }
 
-            PlayMusicTrack(_currentTrackIndex);
+            PlayMusicTrack(CurrentTrackIndex);
         }
 
         public void PlayMusicTrack(int trackIndex)
@@ -93,8 +93,8 @@ namespace Audio
                 return;
             }
 
-            _currentTrackIndex = trackIndex;
-            AudioClip track = musicTracks[_currentTrackIndex];
+            CurrentTrackIndex = trackIndex;
+            AudioClip track = musicTracks[CurrentTrackIndex];
             trackSoundSource.clip = track;
             ApplySounds(); // Aplica o volume da trilha sonora
             trackSoundSource.Play();
