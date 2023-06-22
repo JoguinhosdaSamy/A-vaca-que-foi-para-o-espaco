@@ -14,7 +14,17 @@ Contribuidores:
 
 ## Lore
 
-Uma vaca dorme olhando para as estrelas e sonha que fugiu da fazenda para as estrelas e o seu dono(fazendeiro) está atrás dela viajando pelas constelações.
+Vixe! A VACA FOI PRO ESPAÇO! Mas uma moléstia de uma Nave Cangaceira se abesta a perseguir a bicha… Pronto! Danou-se!
+
+Neste jogo Puzzle para celular, ajude a nossa simpática vaquinha a atravessar a sua via láctea, desviando do cabra que vive a lhe aperrear... Um cheiro!
+
+## GDR
+
+https://docs.google.com/presentation/d/e/2PACX-1vRQcvmbULnaYJ_LWTH9VYkHTIAuEaCwVBPfo7kgVWbJ57NJISWeAQsRBvlgCoX7YcB1HK3qtjP33XDB/pub?start=false&loop=false&delayms=3000
+
+## Kanban (Notion)
+
+https://invincible-tarn-fc2.notion.site/7bb500646ff74ffc9ff4fac7b404b8a7?v=b527a2d486574c0ead54cbfef639746c 
 
 
 ## Referencias
