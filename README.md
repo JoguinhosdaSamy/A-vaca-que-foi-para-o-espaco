@@ -30,12 +30,15 @@ https://invincible-tarn-fc2.notion.site/7bb500646ff74ffc9ff4fac7b404b8a7?v=b527a
 ## Referencias
 
 Um jogo inspirado mecanicamente me Lost N Play(fase da caverna), visualmente em contos e desenhos cangaceiros
+https://pin.it/5Uexmqb 
 
 
 ## Builds
 
 Builds de desenvolvimento serão postadas a cada semana e uma vez ao mes um Alpha de desenvolvimento com instalador. Todos disponivéis nas realeses do GitHub
 
+Último update: https://drive.google.com/file/d/1VtL_n45g2N9Wb7v7vyngX1uN89E4325W/view?usp=sharing 
+
 ## Feedback
 
-Como todo jogo indie e com poucas pessoas envolvidas, gostaria de pedir que quem jogar, nos de um feedback ou na aba Issues do projeto aqui no GitHub ou no discord para Hots#0230
+Como todo jogo indie e com poucas pessoas envolvidas, gostaria de pedir um feedback na aba Issues do projeto aqui no GitHub ou no discord para Hots#0230
