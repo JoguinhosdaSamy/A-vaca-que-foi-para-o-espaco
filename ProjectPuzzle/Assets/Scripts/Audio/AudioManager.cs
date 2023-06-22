@@ -87,6 +87,7 @@ namespace Audio
 
         public void PlayMusicTrack(int trackIndex)
         {
+            StopAllCoroutines();
             if (trackIndex < 0 || trackIndex >= musicTracks.Count)
             {
                 Debug.LogError("Índice de faixa inválido: " + trackIndex);
@@ -100,6 +101,7 @@ namespace Audio
             trackSoundSource.Play();
 
             // Chama o método PlayNextTrack() quando a faixa atual terminar de tocar
+            Debug.Log(track.length);
             StartCoroutine(WaitForTrackToEnd(track.length));
         }
 
